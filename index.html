@@ -19,7 +19,97 @@
 </head>
 <body>
 
-    
+    <!-- =========================
+       MOBILE MENU
+  ========================== -->
+
+    <input type="checkbox" id="nav-toggle" />
+
+    <label for="nav-toggle" class="nav-label"> ☰ </label>
+
+    <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+    <aside class="sidebar">
+      <!-- Brand -->
+
+      <div class="brand">MELOVIA<span>.</span></div>
+
+      <!-- Navigation -->
+
+      <nav class="nav-links">
+        <a href="index.html" class="active"> Home </a>
+
+        <a href="discover.html"> Discover </a>
+
+        <a href="artists.html"> Artists </a>
+
+        <a href="albums.html"> Albums </a>
+
+        <a href="genres.html"> Genres </a>
+
+        <a href="events.html"> Events </a>
+
+        <a href="contact.html"> Contact </a>
+      </nav>
+
+      <!-- Sign Up -->
+
+      <div class="side-foot">
+        <label for="modal-toggle" class="signup-btn"> Sign Up </label>
+      </div>
+    </aside>
+
+    <!-- =========================
+       SIGN UP MODAL
+  ========================== -->
+
+    <input type="checkbox" id="modal-toggle" />
+
+    <div class="modal-overlay">
+      <div class="modal-box">
+        <!-- Modal Header -->
+
+        <div class="modal-head">
+          <h2>Create Account</h2>
+
+          <label for="modal-toggle" class="modal-close"> ✕ </label>
+        </div>
+
+        <!-- Email -->
+
+        <div class="m-field">
+          <label> Email </label>
+
+          <input type="email" placeholder="you@email.com" />
+        </div>
+
+        <!-- Username -->
+
+        <div class="m-field">
+          <label> Username </label>
+
+          <input type="text" placeholder="Choose a username" />
+        </div>
+
+        <!-- Password -->
+
+        <div class="m-field">
+          <label> Password </label>
+
+          <input type="password" placeholder="••••••••" />
+        </div>
+
+        <!-- Submit -->
+
+        <a href="index.html" class="m-submit"> Submit </a>
+
+        <!-- Note -->
+
+        <div class="m-note">By signing up you agree to our terms.</div>
+      </div>
+    </div>
     
 </body>
 </html>
