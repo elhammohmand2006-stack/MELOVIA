@@ -15,6 +15,7 @@
 
     <!-- CSS link -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="layout.css">
 
       <!-- Google Fonts (same as the rest of the site) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,6 +50,57 @@
         <a href="contact.html"> Contact </a>
       </nav>
 
+      <!-- Sign Up + Day/Night toggle -->
+      <div class="side-foot">
+        <!-- id="theme-btn" is what the script below listens for -->
+        <button type="button" id="theme-btn" class="theme-btn">
+          <span id="theme-icon">☀️</span>
+          <span id="theme-label">Day mode</span>
+        </button>
+        <label for="modal-toggle" class="signup-btn"> Sign Up </label>
+      </div>
+    </aside>
 
+     <!-- =========================
+       MAIN CONTENT — Events page
+  ========================== -->
+    <main class="main">
+      <header class="main-header">
+        <div>
+          <p class="eyebrow">Live shows</p>
+          <h1>Events</h1>
+        </div>
+      </header>
+ 
+      <!-- Featured countdown: the next upcoming concert.
+           data-date is read by the JS at the bottom to build the countdown. -->
+      <section class="hero-event" data-date="2026-11-02T21:00:00">
+        <p class="hero-tag">Next up</p>
+        <h2>Neon Nights Tour</h2>
+        <p class="hero-meta">Berlin · Astra Kulturhaus · 9:00 PM</p>
+ 
+        <div class="countdown">
+          <div class="countdown-block">
+            <span class="c-days">00</span>
+            <small>Days</small>
+          </div>
+          <div class="countdown-block">
+            <span class="c-hours">00</span>
+            <small>Hours</small>
+          </div>
+          <div class="countdown-block">
+            <span class="c-minutes">00</span>
+            <small>Minutes</small>
+          </div>
+          <div class="countdown-block">
+            <span class="c-seconds">00</span>
+            <small>Seconds</small>
+          </div>
+        </div>
+ 
+        <button class="btn-tickets">Get tickets</button>
+      </section>
+
+      
 </body>
 </html>
