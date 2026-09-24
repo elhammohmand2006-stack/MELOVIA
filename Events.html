@@ -1,326 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melovia — Events</title>
-     <!-- Bootstrap css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-     <!-- Bootstap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>MELOVIA | Events</title>
 
-    <!-- Bootstap Icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- CSS link -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="layout.css">
-
-      <!-- Google Fonts (same as the rest of the site) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-</head>
-<body>
-    <!-- =========================
-       MOBILE MENU
-  ========================== -->
-    <input type="checkbox" id="nav-toggle" />
-    <label for="nav-toggle" class="nav-label"> ☰ </label>
- 
-    <!-- =========================
-       SIDEBAR
-  ========================== -->
-    <aside class="sidebar">
-      <!-- Brand -->
-      <div class="brand">MELOVIA<span>.</span></div>
- 
-      <!-- Navigation -->
-      <nav class="nav-links">
-        <a href="index.html"> Home </a>
-        <a href="discover.html"> Discover </a>
-        <a href="artists.html"> Artists </a>
-        <a href="albums.html"> Albums </a>
-        <a href="genres.html"> Genres </a>
-        <a href="events.html" class="active"> Events </a>
-        <a href="contact.html"> Contact </a>
-      </nav>
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-      <!-- Sign Up + Day/Night toggle -->
-      <div class="side-foot">
-        <!-- id="theme-btn" is what the script below listens for -->
-        <button type="button" id="theme-btn" class="theme-btn">
-          <span id="theme-icon">☀️</span>
-          <span id="theme-label">Day mode</span>
-        </button>
-        <label for="modal-toggle" class="signup-btn"> Sign Up </label>
-      </div>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         MOBILE MENU TOGGLE
+    ========================== -->
+
+    <input type="checkbox" id="nav-toggle">
+
+    <label for="nav-toggle" class="nav-label">
+        ☰
+    </label>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="brand">
+            MELOVIA<span>.</span>
+        </div>
+
+
+        <!-- Navigation -->
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="discover.html">
+                Discover
+            </a>
+
+            <a href="artists.html">
+                Artists
+            </a>
+
+            <a href="albums.html">
+                Albums
+            </a>
+
+            <a href="genres.html">
+                Genres
+            </a>
+
+            <a href="events.html" class="active">
+                Events
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+        <div class="side-foot">
+
+            <!-- Theme Button -->
+            <button
+                type="button"
+                id="theme-btn"
+                class="theme-btn"
+            >
+
+                <span id="theme-icon">
+                    ☀️
+                </span>
+
+                <span id="theme-label">
+                    Day mode
+                </span>
+
+            </button>
+
+
+            <!-- Sign Up -->
+            <label
+                for="modal-toggle"
+                class="signup-btn"
+            >
+                Sign Up
+            </label>
+
+        </div>
+
     </aside>
 
-     <!-- =========================
-       MAIN CONTENT — Events page
-  ========================== -->
-    <main class="main">
-      <header class="main-header">
-        <div>
-          <p class="eyebrow">Live shows</p>
-          <h1>Events</h1>
-        </div>
-      </header>
- 
-      <!-- Featured countdown: the next upcoming concert.
-           data-date is read by the JS at the bottom to build the countdown. -->
-      <section class="hero-event" data-date="2026-11-02T21:00:00">
-        <p class="hero-tag">Next up</p>
-        <h2>Neon Nights Tour</h2>
-        <p class="hero-meta">Berlin · Astra Kulturhaus · 9:00 PM</p>
- 
-        <div class="countdown">
-          <div class="countdown-block">
-            <span class="c-days">00</span>
-            <small>Days</small>
-          </div>
-          <div class="countdown-block">
-            <span class="c-hours">00</span>
-            <small>Hours</small>
-          </div>
-          <div class="countdown-block">
-            <span class="c-minutes">00</span>
-            <small>Minutes</small>
-          </div>
-          <div class="countdown-block">
-            <span class="c-seconds">00</span>
-            <small>Seconds</small>
-          </div>
-        </div>
- 
-        <button class="btn-tickets">Get tickets</button>
-      </section>
 
-    <!-- Full list of events, each with its own small countdown -->
-      <section class="event-list">
-        <article class="event-row" data-date="2026-09-28T20:00:00">
-          <div class="event-date">
-            <span class="day">28</span>
-            <span class="mon">Sep</span>
-          </div>
-          <div class="event-info">
-            <h3>Melovia Live Night</h3>
-            <p>London · The Roundhouse · 8:00 PM</p>
-          </div>
-          <div class="event-countdown">
-            <span class="mini-countdown"></span>
-          </div>
-          <button class="btn-tickets small">Get tickets</button>
-        </article>
- 
-        <article class="event-row" data-date="2026-10-05T14:00:00">
-          <div class="event-date">
-            <span class="day">05</span>
-            <span class="mon">Oct</span>
-          </div>
-          <div class="event-info">
-            <h3>Music Festival</h3>
-            <p>Manchester · Heaton Park · 2:00 PM</p>
-          </div>
-          <div class="event-countdown">
-            <span class="mini-countdown"></span>
-          </div>
-          <button class="btn-tickets small">Get tickets</button>
-        </article>
- 
-        <article class="event-row" data-date="2026-10-18T19:30:00">
-          <div class="event-date">
-            <span class="day">18</span>
-            <span class="mon">Oct</span>
-          </div>
-          <div class="event-info">
-            <h3>Acoustic Night</h3>
-            <p>Bristol · The Louisiana · 7:30 PM</p>
-          </div>
-          <div class="event-countdown">
-            <span class="mini-countdown"></span>
-          </div>
-          <button class="btn-tickets small">Get tickets</button>
-        </article>
- 
-        <article class="event-row" data-date="2026-11-15T18:30:00">
-          <div class="event-date">
-            <span class="day">15</span>
-            <span class="mon">Nov</span>
-          </div>
-          <div class="event-info">
-            <h3>Jazz &amp; Lo-Fi Sessions</h3>
-            <p>Amsterdam · Paradiso · 6:30 PM</p>
-          </div>
-          <div class="event-countdown">
-            <span class="mini-countdown"></span>
-          </div>
-          <button class="btn-tickets small">Get tickets</button>
-        </article>
-      </section>
-    </main>
-  
-     <!-- ========footer======= -->
-    <footer class="melovia-footer">
-      <div class="brand2">MELOVIA<span>.</span></div>
- 
-      <div class="sf-bottom">
-        <div>© 2026 MELOVIA. All rights reserved.</div>
-        <div class="sf-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookies</a>
-        </div>
-      </div>
-    </footer>
- 
     <!-- =========================
-       SIGN UP MODAL
-  ========================== -->
-    <input type="checkbox" id="modal-toggle" />
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main">
+
+
+        <!-- Page Header -->
+        <header class="main-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    Live shows
+                </p>
+
+                <h1>
+                    Upcoming Events
+                </h1>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             FEATURED EVENT
+        ========================== -->
+
+        <section
+            class="hero-event"
+            data-date="2026-11-02T21:00:00"
+        >
+
+            <p class="hero-tag">
+                Next up
+            </p>
+
+            <h2>
+                Neon Nights Tour
+            </h2>
+
+            <p class="hero-meta">
+                Berlin · Astra Kulturhaus · 9:00 PM
+            </p>
+
+
+            <!-- Countdown -->
+
+            <div class="countdown">
+
+
+                <div class="countdown-block">
+
+                    <span class="c-days">
+                        00
+                    </span>
+
+                    <small>
+                        Days
+                    </small>
+
+                </div>
+
+
+                <div class="countdown-block">
+
+                    <span class="c-hours">
+                        00
+                    </span>
+
+                    <small>
+                        Hours
+                    </small>
+
+                </div>
+
+
+                <div class="countdown-block">
+
+                    <span class="c-minutes">
+                        00
+                    </span>
+
+                    <small>
+                        Minutes
+                    </small>
+
+                </div>
+
+
+                <div class="countdown-block">
+
+                    <span class="c-seconds">
+                        00
+                    </span>
+
+                    <small>
+                        Seconds
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button class="btn-tickets">
+                Get Tickets
+            </button>
+
+        </section>
+
+
+
+        <!-- =========================
+             EVENTS LIST
+        ========================== -->
+
+        <section class="event-list">
+
+
+            <!-- Event 1 -->
+
+            <article
+                class="event-row"
+                data-date="2026-09-28T20:00:00"
+            >
+
+                <div class="event-date">
+
+                    <span class="day">
+                        28
+                    </span>
+
+                    <span class="mon">
+                        SEP
+                    </span>
+
+                </div>
+
+
+                <div class="event-info">
+
+                    <h3>
+                        Melovia Live Night
+                    </h3>
+
+                    <p>
+                        London · The Roundhouse · 8:00 PM
+                    </p>
+
+                </div>
+
+
+                <div class="event-countdown">
+
+                    <span class="mini-countdown">
+                        Loading...
+                    </span>
+
+                </div>
+
+
+                <button class="btn-tickets small">
+                    Get Tickets
+                </button>
+
+            </article>
+
+
+
+            <!-- Event 2 -->
+
+            <article
+                class="event-row"
+                data-date="2026-10-05T14:00:00"
+            >
+
+                <div class="event-date">
+
+                    <span class="day">
+                        05
+                    </span>
+
+                    <span class="mon">
+                        OCT
+                    </span>
+
+                </div>
+
+
+                <div class="event-info">
+
+                    <h3>
+                        Music Festival
+                    </h3>
+
+                    <p>
+                        Manchester · Heaton Park · 2:00 PM
+                    </p>
+
+                </div>
+
+
+                <div class="event-countdown">
+
+                    <span class="mini-countdown">
+                        Loading...
+                    </span>
+
+                </div>
+
+
+                <button class="btn-tickets small">
+                    Get Tickets
+                </button>
+
+            </article>
+
+
+
+            <!-- Event 3 -->
+
+            <article
+                class="event-row"
+                data-date="2026-10-18T19:30:00"
+            >
+
+                <div class="event-date">
+
+                    <span class="day">
+                        18
+                    </span>
+
+                    <span class="mon">
+                        OCT
+                    </span>
+
+                </div>
+
+
+                <div class="event-info">
+
+                    <h3>
+                        Acoustic Night
+                    </h3>
+
+                    <p>
+                        Bristol · The Louisiana · 7:30 PM
+                    </p>
+
+                </div>
+
+
+                <div class="event-countdown">
+
+                    <span class="mini-countdown">
+                        Loading...
+                    </span>
+
+                </div>
+
+
+                <button class="btn-tickets small">
+                    Get Tickets
+                </button>
+
+            </article>
+
+
+
+            <!-- Event 4 -->
+
+            <article
+                class="event-row"
+                data-date="2026-11-15T18:30:00"
+            >
+
+                <div class="event-date">
+
+                    <span class="day">
+                        15
+                    </span>
+
+                    <span class="mon">
+                        NOV
+                    </span>
+
+                </div>
+
+
+                <div class="event-info">
+
+                    <h3>
+                        Jazz & Lo-Fi Sessions
+                    </h3>
+
+                    <p>
+                        Amsterdam · Paradiso · 6:30 PM
+                    </p>
+
+                </div>
+
+
+                <div class="event-countdown">
+
+                    <span class="mini-countdown">
+                        Loading...
+                    </span>
+
+                </div>
+
+
+                <button class="btn-tickets small">
+                    Get Tickets
+                </button>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="melovia-footer">
+
+        <div class="brand2">
+            MELOVIA<span>.</span>
+        </div>
+
+
+        <div class="sf-bottom">
+
+            <div>
+                © 2026 MELOVIA. All rights reserved.
+            </div>
+
+
+            <div class="sf-legal">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms of Service
+                </a>
+
+                <a href="#">
+                    Cookies
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         SIGN UP MODAL
+    ========================== -->
+
+    <input
+        type="checkbox"
+        id="modal-toggle"
+    >
+
+
     <div class="modal-overlay">
-      <div class="modal-box">
-        <div class="modal-head">
-          <h2>Create Account</h2>
-          <label for="modal-toggle" class="modal-close"> ✕ </label>
+
+        <div class="modal-box">
+
+
+            <div class="modal-head">
+
+                <h2>
+                    Create Account
+                </h2>
+
+                <label
+                    for="modal-toggle"
+                    class="modal-close"
+                >
+                    ×
+                </label>
+
+            </div>
+
+
+            <div class="m-field">
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    placeholder="you@email.com"
+                >
+
+            </div>
+
+
+            <div class="m-field">
+
+                <label>
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Choose a username"
+                >
+
+            </div>
+
+
+            <div class="m-field">
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    placeholder="••••••••"
+                >
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="m-submit"
+            >
+                Create Account
+            </a>
+
+
+            <p class="m-note">
+                By signing up you agree to our terms.
+            </p>
+
         </div>
- 
-        <div class="m-field">
-          <label> Email </label>
-          <input type="email" placeholder="you@email.com" />
-        </div>
- 
-        <div class="m-field">
-          <label> Username </label>
-          <input type="text" placeholder="Choose a username" />
-        </div>
- 
-        <div class="m-field">
-          <label> Password </label>
-          <input type="password" placeholder="••••••••" />
-        </div>
- 
-        <a href="index.html" class="m-submit"> Submit </a>
- 
-        <div class="m-note">By signing up you agree to our terms.</div>
-      </div>
+
     </div>
-    
-     <!-- =========================
-       JAVASCRIPT (kept inline, no separate .js file)
-  ========================== -->
-    <script>
-      /* ---------------------------------------------------
-         1) COUNTDOWN TIMERS
-         Any element with a data-date attribute gets its own
-         live countdown. isHero=true fills the big 4-box
-         countdown; isHero=false fills the small one-line text
-         next to each event in the list.
-      --------------------------------------------------- */
-      function startCountdown(el, isHero) {
-        const targetDate = new Date(el.getAttribute("data-date")).getTime();
- 
-        function update() {
-          const now = new Date().getTime();
-          const diff = targetDate - now;
- 
-          // the event date has already passed
-          if (diff <= 0) {
-            if (isHero) {
-              el.querySelector(".c-days").textContent = "00";
-              el.querySelector(".c-hours").textContent = "00";
-              el.querySelector(".c-minutes").textContent = "00";
-              el.querySelector(".c-seconds").textContent = "00";
-            } else {
-              el.querySelector(".mini-countdown").textContent =
-                "Happening now";
-            }
-            return;
-          }
- 
-          // break the remaining milliseconds into days/hours/min/sec
-          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-          const hours = Math.floor(
-            (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-          );
-          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
- 
-          if (isHero) {
-            el.querySelector(".c-days").textContent = String(days).padStart(
-              2,
-              "0"
-            );
-            el.querySelector(".c-hours").textContent = String(
-              hours
-            ).padStart(2, "0");
-            el.querySelector(".c-minutes").textContent = String(
-              minutes
-            ).padStart(2, "0");
-            el.querySelector(".c-seconds").textContent = String(
-              seconds
-            ).padStart(2, "0");
-          } else {
-            el.querySelector(
-              ".mini-countdown"
-            ).textContent = `${days}d ${hours}h ${minutes}m left`;
-          }
- 
-          // update again in one second
-          setTimeout(update, 1000);
-        }
- 
-        update();
-      }
- 
-      // start the big hero countdown
-      const hero = document.querySelector(".hero-event");
-      if (hero) startCountdown(hero, true);
- 
-      // start a small countdown for every row in the list
-      document
-        .querySelectorAll(".event-row")
-        .forEach((row) => startCountdown(row, false));
- 
-      /* ---------------------------------------------------
-         2) DAY / NIGHT MODE TOGGLE
-         Night mode is the default. Clicking the button adds
-         data-theme="day" to <body>, which switches the
-         --content-* CSS variables defined at the top.
-         The choice is remembered with localStorage.
-      --------------------------------------------------- */
-      const themeBtn = document.getElementById("theme-btn");
-      const themeIcon = document.getElementById("theme-icon");
-      const themeLabel = document.getElementById("theme-label");
-      const body = document.body;
- 
-      // restore the saved choice, if any
-      if (localStorage.getItem("melovia-theme") === "day") {
-        body.setAttribute("data-theme", "day");
-        themeIcon.textContent = "🌙";
-        themeLabel.textContent = "Night mode";
-      }
- 
-      themeBtn.addEventListener("click", function () {
-        const isDay = body.getAttribute("data-theme") === "day";
- 
-        if (isDay) {
-          body.removeAttribute("data-theme");
-          themeIcon.textContent = "☀️";
-          themeLabel.textContent = "Day mode";
-          localStorage.setItem("melovia-theme", "night");
-        } else {
-          body.setAttribute("data-theme", "day");
-          themeIcon.textContent = "🌙";
-          themeLabel.textContent = "Night mode";
-          localStorage.setItem("melovia-theme", "day");
-        }
-      });
-    </script>
+
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
 </body>
+
 </html>
