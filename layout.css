@@ -1,0 +1,427 @@
+SS
+/* =====================================================
+   LAYOUT.CSS
+   Shared across every page of the site: Sidebar, Footer,
+   Sign-up Modal, mobile hamburger menu, and the color
+   variables. Every page (index.html, discover.html,
+   events.html, ...) should link this same file so the
+   look stays identical everywhere.
+===================================================== */
+ 
+/* =========================
+   VARIABLES
+   (same palette used across the whole site)
+========================= */
+:root {
+  --red: #b3261a;
+  --dark-red: #980408;
+ 
+  --black: #050000;
+ 
+  --light-gray: #d6d3d4;
+  --gray: #dbdad9;
+ 
+  --white: #ffffff;
+ 
+  --sidebar-w: 250px;
+ 
+  /* Content-area colors: these are the ones the day/night
+     button changes. Night mode is the default.
+     Each page can use these for its own content area. */
+  --content-bg: var(--black);
+  --content-panel: #120707;
+  --content-border: #2a1010;
+  --content-text: var(--white);
+  --content-muted: #b9adad;
+}
+ 
+/* Day mode overrides — applied when <body data-theme="day"> */
+body[data-theme="day"] {
+  --content-bg: var(--white);
+  --content-panel: #ffffff;
+  --content-border: var(--light-gray);
+  --content-text: var(--black);
+  --content-muted: #6b6161;
+}
+ 
+/* =========================
+   RESET
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--content-bg);
+  color: var(--content-text);
+  /* smooth fade whenever the theme toggles */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+ 
+/* =========================
+   LINKS
+========================= */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ 
+/* =========================
+   SIDEBAR TOGGLE (mobile hamburger checkbox trick)
+========================= */
+#nav-toggle {
+  display: none;
+}
+ 
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-w);
+  padding: 28px 22px;
+  padding-top: calc(28px + env(safe-area-inset-top, 0px));
+  background: #dbdad9;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  z-index: 50;
+}
+ 
+/* =========================
+   BRAND
+========================= */
+.brand {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--black);
+}
+.brand span {
+  color: var(--red);
+}
+ 
+/* =========================
+   NAVIGATION
+========================= */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+ 
+.nav-links a {
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--black);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.15s, color 0.15s;
+}
+ 
+.nav-links a:hover {
+  background: rgba(179, 38, 26, 0.18);
+  color: var(--white);
+}
+ 
+/* the current page's own link gets this — set class="active"
+   by hand on the matching <a> in each page */
+.nav-links a.active {
+  background: linear-gradient(90deg, var(--red), var(--dark-red));
+  color: var(--white);
+}
+ 
+/* =========================
+   SIDEBAR FOOTER (Sign up + theme toggle)
+========================= */
+.side-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ 
+.signup-btn {
+  display: block;
+  text-align: center;
+  padding: 11px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: linear-gradient(120deg, var(--red), var(--dark-red));
+  color: var(--white);
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.signup-btn:hover {
+  opacity: 0.9;
+}
+ 
+/* Day / Night button — plain button, styled like the sign-up
+   button but outlined instead of filled */
+.theme-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: transparent;
+  color: var(--black);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.theme-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+ 
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+.nav-label {
+  position: fixed;
+  top: calc(14px + env(safe-area-inset-top, 0px));
+  left: 14px;
+  z-index: 60;
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--black);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--white);
+  cursor: pointer;
+}
+ 
+/* =========================
+   MODAL TOGGLE (Sign up popup, pure CSS)
+========================= */
+#modal-toggle {
+  display: none;
+}
+ 
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+ 
+#modal-toggle:checked ~ .modal-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+ 
+.modal-box {
+  width: 100%;
+  max-width: 380px;
+  background: var(--white);
+  color: var(--black);
+  border-radius: 18px;
+  padding: 34px 30px;
+  transform: translateY(14px);
+  transition: transform 0.2s ease;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+}
+ 
+#modal-toggle:checked ~ .modal-overlay .modal-box {
+  transform: translateY(0);
+}
+ 
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+ 
+.modal-head h2 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+ 
+.modal-close {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--gray);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+ 
+.m-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+ 
+.m-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--dark-red);
+}
+ 
+.m-field input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--light-gray);
+  background: var(--white);
+  color: var(--black);
+  font-family: "Inter", sans-serif;
+  font-size: 0.92rem;
+}
+ 
+.m-field input:focus {
+  outline: 2px solid var(--red);
+  border-color: transparent;
+}
+ 
+.m-submit {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px;
+  border-radius: 10px;
+  background: linear-gradient(120deg, var(--red), var(--dark-red));
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.m-submit:hover {
+  opacity: 0.92;
+}
+ 
+.m-note {
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.78rem;
+  margin-top: 16px;
+}
+ 
+/* =========================
+   FOOTER
+========================= */
+footer.melovia-footer {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  background: var(--black);
+  color: var(--gray);
+  padding: 64px 56px 0;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  margin-left: var(--sidebar-w);
+}
+footer.melovia-footer * {
+  box-sizing: border-box;
+}
+footer.melovia-footer a {
+  text-decoration: none;
+  color: inherit;
+}
+.brand2 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--gray);
+}
+.brand2 span {
+  color: var(--red);
+}
+ 
+.sf-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 24px 0;
+  color: var(--light-gray);
+  font-size: 0.8rem;
+}
+.sf-bottom .sf-legal {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.sf-bottom .sf-legal a:hover {
+  color: var(--red);
+}
+ 
+/* =========================
+   MOBILE — shared parts only
+   (sidebar collapse, hamburger, modal, footer spacing)
+========================= */
+@media (max-width: 900px) {
+  footer.melovia-footer {
+    padding: 48px 28px 0;
+  }
+}
+ 
+@media (max-width: 640px) {
+  /* Hamburger */
+  .nav-label {
+    display: flex;
+  }
+ 
+  /* Hide sidebar off-canvas */
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  }
+ 
+  #nav-toggle:checked ~ .nav-label {
+    background: var(--red);
+  }
+  #nav-toggle:checked ~ .sidebar {
+    transform: translateX(0);
+  }
+  #nav-toggle:checked ~ .sidebar .brand {
+    margin-top: 45px;
+  }
+ 
+  .modal-box {
+    width: calc(100% - 30px);
+  }
+ 
+  /* the sidebar is off-canvas here, so the footer no longer
+     needs to leave space for it. Each page's own CSS should
+     do the same thing for its main content area. */
+  footer.melovia-footer {
+    margin-left: 0;
+  }
+}
+ 
+@media (max-width: 560px) {
+  .sf-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
