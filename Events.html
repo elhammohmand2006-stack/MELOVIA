@@ -210,6 +210,117 @@
         <div class="m-note">By signing up you agree to our terms.</div>
       </div>
     </div>
+    
+     <!-- =========================
+       JAVASCRIPT (kept inline, no separate .js file)
+  ========================== -->
+    <script>
+      /* ---------------------------------------------------
+         1) COUNTDOWN TIMERS
+         Any element with a data-date attribute gets its own
+         live countdown. isHero=true fills the big 4-box
+         countdown; isHero=false fills the small one-line text
+         next to each event in the list.
+      --------------------------------------------------- */
+      function startCountdown(el, isHero) {
+        const targetDate = new Date(el.getAttribute("data-date")).getTime();
  
+        function update() {
+          const now = new Date().getTime();
+          const diff = targetDate - now;
+ 
+          // the event date has already passed
+          if (diff <= 0) {
+            if (isHero) {
+              el.querySelector(".c-days").textContent = "00";
+              el.querySelector(".c-hours").textContent = "00";
+              el.querySelector(".c-minutes").textContent = "00";
+              el.querySelector(".c-seconds").textContent = "00";
+            } else {
+              el.querySelector(".mini-countdown").textContent =
+                "Happening now";
+            }
+            return;
+          }
+ 
+          // break the remaining milliseconds into days/hours/min/sec
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+ 
+          if (isHero) {
+            el.querySelector(".c-days").textContent = String(days).padStart(
+              2,
+              "0"
+            );
+            el.querySelector(".c-hours").textContent = String(
+              hours
+            ).padStart(2, "0");
+            el.querySelector(".c-minutes").textContent = String(
+              minutes
+            ).padStart(2, "0");
+            el.querySelector(".c-seconds").textContent = String(
+              seconds
+            ).padStart(2, "0");
+          } else {
+            el.querySelector(
+              ".mini-countdown"
+            ).textContent = `${days}d ${hours}h ${minutes}m left`;
+          }
+ 
+          // update again in one second
+          setTimeout(update, 1000);
+        }
+ 
+        update();
+      }
+ 
+      // start the big hero countdown
+      const hero = document.querySelector(".hero-event");
+      if (hero) startCountdown(hero, true);
+ 
+      // start a small countdown for every row in the list
+      document
+        .querySelectorAll(".event-row")
+        .forEach((row) => startCountdown(row, false));
+ 
+      /* ---------------------------------------------------
+         2) DAY / NIGHT MODE TOGGLE
+         Night mode is the default. Clicking the button adds
+         data-theme="day" to <body>, which switches the
+         --content-* CSS variables defined at the top.
+         The choice is remembered with localStorage.
+      --------------------------------------------------- */
+      const themeBtn = document.getElementById("theme-btn");
+      const themeIcon = document.getElementById("theme-icon");
+      const themeLabel = document.getElementById("theme-label");
+      const body = document.body;
+ 
+      // restore the saved choice, if any
+      if (localStorage.getItem("melovia-theme") === "day") {
+        body.setAttribute("data-theme", "day");
+        themeIcon.textContent = "🌙";
+        themeLabel.textContent = "Night mode";
+      }
+ 
+      themeBtn.addEventListener("click", function () {
+        const isDay = body.getAttribute("data-theme") === "day";
+ 
+        if (isDay) {
+          body.removeAttribute("data-theme");
+          themeIcon.textContent = "☀️";
+          themeLabel.textContent = "Day mode";
+          localStorage.setItem("melovia-theme", "night");
+        } else {
+          body.setAttribute("data-theme", "day");
+          themeIcon.textContent = "🌙";
+          themeLabel.textContent = "Night mode";
+          localStorage.setItem("melovia-theme", "day");
+        }
+      });
+    </script>
 </body>
 </html>
