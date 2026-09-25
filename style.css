@@ -908,3 +908,51 @@ main {
     }
 
 }
+
+/* =========================
+   VOLUME
+========================= */
+
+.player-volume {
+    width: 130px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.player-volume i {
+    font-size: 1rem;
+
+    color: var(--white);
+
+    cursor: pointer;
+}
+
+#volume-bar {
+    margin: 0;
+
+    cursor: pointer;
+}
+
+#volume-bar::-webkit-slider-runnable-track {
+    background: #555;
+}
+
+#volume-bar::-webkit-slider-thumb {
+    background: var(--red);
+}
+
+
+/* =========================
+   MOBILE VOLUME
+========================= */
+
+@media (max-width: 640px) {
+
+    .player-volume {
+        display: none;
+    }
+
+}

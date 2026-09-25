@@ -373,7 +373,22 @@ Live the <span>moment</span></h1>
         <span id="duration">0:00</span>
 
     </div>
+<!-- Volume -->
+<div class="player-volume">
 
+    <i class="bi bi-volume-up-fill" id="volume-icon"></i>
+
+    <input
+        type="range"
+        id="volume-bar"
+        class="form-range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1"
+    >
+
+</div>
 </div>
 
 
@@ -401,6 +416,9 @@ const playerArtist = document.getElementById("player-artist");
 const playerCover = document.getElementById("player-cover");
 
 const songElements = document.querySelectorAll(".song");
+
+const volumeBar = document.getElementById("volume-bar");
+const volumeIcon = document.getElementById("volume-icon");
 
 
 /* =========================
@@ -678,6 +696,62 @@ nextBtn.addEventListener(
     nextSong
 );
 
+
+/* =========================
+   VOLUME
+========================= */
+
+volumeBar.addEventListener("input", function () {
+
+    musicPlayer.volume = volumeBar.value;
+
+    if (volumeBar.value == 0) {
+
+        volumeIcon.className =
+            "bi bi-volume-mute-fill";
+
+    } else if (volumeBar.value < 0.5) {
+
+        volumeIcon.className =
+            "bi bi-volume-down-fill";
+
+    } else {
+
+        volumeIcon.className =
+            "bi bi-volume-up-fill";
+
+    }
+
+});
+
+
+/* =========================
+   MUTE
+========================= */
+
+volumeIcon.addEventListener("click", function () {
+
+    if (musicPlayer.muted) {
+
+        musicPlayer.muted = false;
+
+        volumeBar.value = musicPlayer.volume;
+
+        volumeIcon.className =
+            "bi bi-volume-up-fill";
+
+    } else {
+
+        musicPlayer.muted = true;
+
+        volumeBar.value = 0;
+
+        volumeIcon.className =
+            "bi bi-volume-mute-fill";
+
+    }
+
+});
 
 /* =========================
    AUTO NEXT SONG
