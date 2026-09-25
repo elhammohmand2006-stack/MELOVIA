@@ -10,16 +10,20 @@
 
 function startCountdown(element, isHero) {
 
-    const dateString = element.getAttribute("data-date");
+    const dateString =
+        element.getAttribute("data-date");
 
-    const targetDate = new Date(dateString).getTime();
+    const targetDate =
+        new Date(dateString).getTime();
 
 
     function updateCountdown() {
 
-        const now = new Date().getTime();
+        const now =
+            new Date().getTime();
 
-        const difference = targetDate - now;
+        const difference =
+            targetDate - now;
 
 
         /* Event has already happened */
@@ -28,56 +32,87 @@ function startCountdown(element, isHero) {
 
             if (isHero) {
 
-                element.querySelector(".c-days").textContent = "00";
+                element.querySelector(
+                    ".c-days"
+                ).textContent = "00";
 
-                element.querySelector(".c-hours").textContent = "00";
-
-                element.querySelector(".c-minutes").textContent = "00";
-
-                element.querySelector(".c-seconds").textContent = "00";
-
-            } else {
 
                 element.querySelector(
-                    ".mini-countdown"
-                ).textContent = "Happening now";
+                    ".c-hours"
+                ).textContent = "00";
+
+
+                element.querySelector(
+                    ".c-minutes"
+                ).textContent = "00";
+
+
+                element.querySelector(
+                    ".c-seconds"
+                ).textContent = "00";
 
             }
 
+            else {
+
+                element.querySelector(
+                    ".mini-countdown"
+                ).textContent =
+                    "Happening now";
+
+            }
+
+
             return;
+
         }
 
 
-        /* Calculate time */
+        /* =================================================
+           CALCULATE TIME
+        ================================================== */
 
-        const days = Math.floor(
-            difference /
-            (1000 * 60 * 60 * 24)
-        );
-
-
-        const hours = Math.floor(
-            (difference %
-                (1000 * 60 * 60 * 24)) /
-            (1000 * 60 * 60)
-        );
+        const days =
+            Math.floor(
+                difference /
+                (1000 * 60 * 60 * 24)
+            );
 
 
-        const minutes = Math.floor(
-            (difference %
-                (1000 * 60 * 60)) /
-            (1000 * 60)
-        );
+        const hours =
+            Math.floor(
+                (
+                    difference %
+                    (1000 * 60 * 60 * 24)
+                ) /
+                (1000 * 60 * 60)
+            );
 
 
-        const seconds = Math.floor(
-            (difference %
-                (1000 * 60)) /
-            1000
-        );
+        const minutes =
+            Math.floor(
+                (
+                    difference %
+                    (1000 * 60 * 60)
+                ) /
+                (1000 * 60)
+            );
 
 
-        /* Hero countdown */
+        const seconds =
+            Math.floor(
+                (
+                    difference %
+                    (1000 * 60)
+                ) /
+                1000
+            );
+
+
+
+        /* =================================================
+           HERO COUNTDOWN
+        ================================================== */
 
         if (isHero) {
 
@@ -107,7 +142,10 @@ function startCountdown(element, isHero) {
         }
 
 
-        /* Small countdown */
+
+        /* =================================================
+           SMALL COUNTDOWN
+        ================================================== */
 
         else {
 
@@ -119,13 +157,21 @@ function startCountdown(element, isHero) {
         }
 
 
-        /* Update every second */
 
-        setTimeout(updateCountdown, 1000);
+        /* =================================================
+           UPDATE EVERY SECOND
+        ================================================== */
+
+        setTimeout(
+            updateCountdown,
+            1000
+        );
+
     }
 
 
     updateCountdown();
+
 }
 
 
@@ -135,7 +181,9 @@ function startCountdown(element, isHero) {
 ===================================================== */
 
 const heroEvent =
-    document.querySelector(".hero-event");
+    document.querySelector(
+        ".hero-event"
+    );
 
 
 if (heroEvent) {
@@ -154,17 +202,21 @@ if (heroEvent) {
 ===================================================== */
 
 const eventRows =
-    document.querySelectorAll(".event-row");
-
-
-eventRows.forEach(function (row) {
-
-    startCountdown(
-        row,
-        false
+    document.querySelectorAll(
+        ".event-row"
     );
 
-});
+
+eventRows.forEach(
+    function (row) {
+
+        startCountdown(
+            row,
+            false
+        );
+
+    }
+);
 
 
 
@@ -173,15 +225,21 @@ eventRows.forEach(function (row) {
 ===================================================== */
 
 const themeButton =
-    document.getElementById("theme-btn");
+    document.getElementById(
+        "theme-btn"
+    );
 
 
 const themeIcon =
-    document.getElementById("theme-icon");
+    document.getElementById(
+        "theme-icon"
+    );
 
 
 const themeLabel =
-    document.getElementById("theme-label");
+    document.getElementById(
+        "theme-label"
+    );
 
 
 const body =
@@ -189,10 +247,14 @@ const body =
 
 
 
-/* Restore saved theme */
+/* =====================================================
+   RESTORE SAVED THEME
+===================================================== */
 
 const savedTheme =
-    localStorage.getItem("melovia-theme");
+    localStorage.getItem(
+        "melovia-theme"
+    );
 
 
 if (savedTheme === "day") {
@@ -202,7 +264,10 @@ if (savedTheme === "day") {
         "day"
     );
 
-    themeIcon.textContent = "🌙";
+
+    themeIcon.textContent =
+        "🌙";
+
 
     themeLabel.textContent =
         "Night mode";
@@ -211,7 +276,9 @@ if (savedTheme === "day") {
 
 
 
-/* Theme button */
+/* =====================================================
+   THEME BUTTON
+===================================================== */
 
 if (themeButton) {
 
@@ -219,45 +286,62 @@ if (themeButton) {
         "click",
         function () {
 
+
             const isDay =
                 body.getAttribute(
                     "data-theme"
                 ) === "day";
 
 
+
             if (isDay) {
 
-                /* Change to night */
+
+                /* =========================================
+                   CHANGE TO NIGHT
+                ========================================== */
 
                 body.removeAttribute(
                     "data-theme"
                 );
 
+
                 themeIcon.textContent =
                     "☀️";
 
+
                 themeLabel.textContent =
                     "Day mode";
+
 
                 localStorage.setItem(
                     "melovia-theme",
                     "night"
                 );
 
-            } else {
 
-                /* Change to day */
+            }
+
+            else {
+
+
+                /* =========================================
+                   CHANGE TO DAY
+                ========================================== */
 
                 body.setAttribute(
                     "data-theme",
                     "day"
                 );
 
+
                 themeIcon.textContent =
                     "🌙";
 
+
                 themeLabel.textContent =
                     "Night mode";
+
 
                 localStorage.setItem(
                     "melovia-theme",
@@ -283,17 +367,19 @@ const ticketButtons =
     );
 
 
-ticketButtons.forEach(function (button) {
+ticketButtons.forEach(
+    function (button) {
 
-    button.addEventListener(
-        "click",
-        function () {
+        button.addEventListener(
+            "click",
+            function () {
 
-            alert(
-                "Ticket booking will be available soon!"
-            );
+                alert(
+                    "Ticket booking will be available soon!"
+                );
 
-        }
-    );
+            }
+        );
 
-});
+    }
+);
