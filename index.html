@@ -177,11 +177,11 @@ Live the <span>moment</span></h1>
                 <img src="Image/song1.jpg" alt="Mr. Right Now">
 
                 <div class="song-info">
-                    <h3>Mr. Right Now</h3>
-                    <p>Metro Boomin</p>
+                    <h3>Sonne</h3>
+                    <p>Rammstein</p>
                 </div>
 
-                <span class="song-duration">3:21</span>
+                <span class="song-duration">4:32</span>
 
             </div>
 
@@ -192,11 +192,11 @@ Live the <span>moment</span></h1>
                 <img src="Image/song2.jpg" alt="Many Men">
 
                 <div class="song-info">
-                    <h3>Many Men</h3>
-                    <p>21 Savage</p>
+                    <h3>Gui Bian</h3>
+                    <p>Beauty</p>
                 </div>
 
-                <span class="song-duration">2:20</span>
+                <span class="song-duration">3:20</span>
 
             </div>
 
@@ -207,39 +207,39 @@ Live the <span>moment</span></h1>
                 <img src="Image/song3.jpg" alt="Song">
 
                 <div class="song-info">
-                    <h3>Song Name</h3>
-                    <p>Artist Name</p>
+                    <h3>SPECIALZ</h3>
+                    <p>King Gnu</p>
                 </div>
 
-                <span class="song-duration">3:10</span>
+                <span class="song-duration">3:58</span>
 
             </div>
 
             <!-- Song 4 -->
             <div class="song" data-song="3">
 
-                <img src="Image/song3.jpg" alt="Song">
+                <img src="Image/song4.jpg" alt="Song">
 
                 <div class="song-info">
-                    <h3>Song Name</h3>
-                    <p>Artist Name</p>
+                    <h3>Selena Gomez</h3>
+                    <p>Kill Em with Kindness</p>
                 </div>
 
-                <span class="song-duration">3:10</span>
+                <span class="song-duration">3:37</span>
 
             </div>
 
             <!-- Song 5 -->
             <div class="song" data-song="4">
 
-                <img src="Image/song3.jpg" alt="Song">
+                <img src="Image/song5.jpg" alt="Song">
 
                 <div class="song-info">
-                    <h3>Song Name</h3>
-                    <p>Artist Name</p>
+                    <h3>Drama</h3>
+                    <p>aespa</p>
                 </div>
 
-                <span class="song-duration">3:10</span>
+                <span class="song-duration">3:35</span>
 
             </div>
 
@@ -256,42 +256,42 @@ Live the <span>moment</span></h1>
          
         <div class="row gy-3">
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg text-light" style="background-image: url(Image/pop.jpg);">
+               <div class="card card-bg" style="background-image: url(Image/pop.jpg);">
                 <div class="div-body"><h1>POP</h1></div>
                </div>
             </div>
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg text-light" style="background-image: url(Image/rock.jpg);">
+               <div class="card card-bg" style="background-image: url(Image/rock.jpg);">
                 <div class="div-body"><h1>Rock</h1></div>
                </div>
             </div>
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg text-light" style="background-image: url(Image/rap.jpg);">
+               <div class="card card-bg" style="background-image: url(Image/rap.jpg);">
                 <div class="div-body"><h1>HIP HOP</h1></div>
                </div>
             </div>
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg text-light text-light" style="background-image: url(Image/electronic.jpg);">
+               <div class="card card-bg" style="background-image: url(Image/electronic.jpg);">
                 <div class="div-body"><h1>ELECTRONIC</h1></div>
                </div>
             </div>
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg text-light"  style="background-image: url(Image/jpop.jpg);">
+               <div class="card card-bg"  style="background-image: url(Image/jpop.jpg);">
                 <div class="div-body"><h1>J-POP</h1></div>
                </div>
             </div>
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg text-light" style="background-image: url(Image/kpop.jpg);">
+               <div class="card card-bg" style="background-image: url(Image/kpop.jpg);">
                 <div class="div-body"><h1>K-POP</h1></div>
                </div>
             </div>
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg text-light" style="background-image: url(Image/metal.jpg);">
+               <div class="card card-bg" style="background-image: url(Image/metal.jpg);">
                 <div class="div-body"><h1>METAL</h1></div>
                </div>
             </div>
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg text-light" style="background-image: url(Image/rb.jpg);">
+               <div class="card card-bg" style="background-image: url(Image/rb.jpg);">
                 <div class="div-body"><h1>R&B / SOUL</h1></div>
                </div>
             </div>
@@ -381,6 +381,322 @@ Live the <span>moment</span></h1>
 <audio id="music-player"></audio>
     </section>
 </main>
-   
+
+
+   <script>
+
+const musicPlayer = document.getElementById("music-player");
+
+const playBtn = document.getElementById("play-btn");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+
+const progressBar = document.getElementById("progress-bar");
+
+const currentTime = document.getElementById("current-time");
+const duration = document.getElementById("duration");
+
+const playerTitle = document.getElementById("player-title");
+const playerArtist = document.getElementById("player-artist");
+const playerCover = document.getElementById("player-cover");
+
+const songElements = document.querySelectorAll(".song");
+
+
+/* =========================
+   SONG DATA
+========================= */
+
+const songs = [
+
+    {
+        title: "Sonne",
+        artist: "Rammstein",
+        cover: "Image/song1.jpg",
+        audio: "Audio/song1.mp3"
+    },
+
+    {
+        title: "Gui Bian",
+        artist: "Beauty",
+        cover: "Image/song2.jpg",
+        audio: "Audio/song2.m4a"
+    },
+
+    {
+        title: "SPECIALZ",
+        artist: "King Gnu",
+        cover: "Image/song3.jpg",
+        audio: "Audio/song3.mp3"
+    },
+
+    {
+        title: "Kill Em with Kindness",
+        artist: "Selena Gomez",
+        cover: "Image/song4.jpg",
+        audio: "Audio/song4.mp3"
+    },
+    {
+        title: "Drama",
+        artist: "aespa",
+        cover: "Image/song5.jpg",
+        audio: "Audio/song5.mp3"
+    }
+
+];
+
+
+let currentSong = 0;
+
+
+/* =========================
+   LOAD SONG
+========================= */
+
+function loadSong(index) {
+
+    currentSong = index;
+
+    const song = songs[currentSong];
+
+    playerTitle.textContent = song.title;
+
+    playerArtist.textContent = song.artist;
+
+    playerCover.src = song.cover;
+
+    musicPlayer.src = song.audio;
+
+    progressBar.value = 0;
+
+    currentTime.textContent = "0:00";
+
+    duration.textContent = "0:00";
+
+
+    /* Active song */
+
+    songElements.forEach(song => {
+        song.classList.remove("playing");
+    });
+
+    if (songElements[currentSong]) {
+        songElements[currentSong].classList.add("playing");
+    }
+
+}
+
+
+/* =========================
+   PLAY / PAUSE
+========================= */
+
+function togglePlay() {
+
+    if (musicPlayer.paused) {
+
+        musicPlayer.play();
+
+    } else {
+
+        musicPlayer.pause();
+
+    }
+
+}
+
+
+/* =========================
+   PLAY ICON
+========================= */
+
+musicPlayer.addEventListener("play", function () {
+
+    playBtn.innerHTML =
+        '<i class="bi bi-pause-fill"></i>';
+
+});
+
+
+musicPlayer.addEventListener("pause", function () {
+
+    playBtn.innerHTML =
+        '<i class="bi bi-play-fill"></i>';
+
+});
+
+
+/* =========================
+   NEXT
+========================= */
+
+function nextSong() {
+
+    currentSong++;
+
+    if (currentSong >= songs.length) {
+        currentSong = 0;
+    }
+
+    loadSong(currentSong);
+
+    musicPlayer.play();
+
+}
+
+
+/* =========================
+   PREVIOUS
+========================= */
+
+function previousSong() {
+
+    currentSong--;
+
+    if (currentSong < 0) {
+        currentSong = songs.length - 1;
+    }
+
+    loadSong(currentSong);
+
+    musicPlayer.play();
+
+}
+
+
+/* =========================
+   CLICK RECENT SONG
+========================= */
+
+songElements.forEach((songElement) => {
+
+    songElement.addEventListener("click", function () {
+
+        const index =
+            Number(this.dataset.song);
+
+        loadSong(index);
+
+        musicPlayer.play();
+
+    });
+
+});
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+musicPlayer.addEventListener("timeupdate", function () {
+
+    if (!musicPlayer.duration) {
+        return;
+    }
+
+    const progress =
+        (musicPlayer.currentTime /
+        musicPlayer.duration) * 100;
+
+    progressBar.value = progress;
+
+    currentTime.textContent =
+        formatTime(musicPlayer.currentTime);
+
+});
+
+
+/* =========================
+   DURATION
+========================= */
+
+musicPlayer.addEventListener(
+    "loadedmetadata",
+    function () {
+
+        duration.textContent =
+            formatTime(musicPlayer.duration);
+
+    }
+);
+
+
+/* =========================
+   CHANGE POSITION
+========================= */
+
+progressBar.addEventListener("input", function () {
+
+    if (!musicPlayer.duration) {
+        return;
+    }
+
+    musicPlayer.currentTime =
+        (progressBar.value / 100) *
+        musicPlayer.duration;
+
+});
+
+/* =========================
+   FORMAT TIME
+========================= */
+
+function formatTime(seconds) {
+
+    if (!Number.isFinite(seconds)) {
+        return "0:00";
+    }
+
+    const minutes =
+        Math.floor(seconds / 60);
+
+    const remainingSeconds =
+        Math.floor(seconds % 60);
+
+    return minutes + ":" +
+        String(remainingSeconds).padStart(2, "0");
+
+}
+
+
+/* =========================
+   BUTTON EVENTS
+========================= */
+
+playBtn.addEventListener(
+    "click",
+    togglePlay
+);
+
+prevBtn.addEventListener(
+    "click",
+    previousSong
+);
+
+nextBtn.addEventListener(
+    "click",
+    nextSong
+);
+
+
+/* =========================
+   AUTO NEXT SONG
+========================= */
+
+musicPlayer.addEventListener(
+    "ended",
+    nextSong
+);
+
+
+/* =========================
+   FIRST SONG
+========================= */
+
+loadSong(0);
+
+</script>
+
 </body>
+
 </html>
