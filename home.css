@@ -32,6 +32,215 @@ body {
     font-family: "Bricolage Grotesque", sans-serif;
 }
 
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body {
+    background-color: #f5f5f5;
+    color: var(--black);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+/* =========================
+   DARK BODY
+========================= */
+
+body:not([data-theme="day"]) {
+    background-color: #0d0d0d;
+    color: #ffffff;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+body:not([data-theme="day"]) .sidebar {
+    background-color: #161616;
+    border-right-color: rgba(255, 255, 255, 0.08);
+}
+
+body:not([data-theme="day"]) .brand {
+    color: #ffffff;
+}
+
+body:not([data-theme="day"]) .nav-links a {
+    color: #eeeeee;
+}
+
+body:not([data-theme="day"]) .nav-links a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+body:not([data-theme="day"]) .hero-content h1 {
+    color: #ffffff;
+}
+
+body:not([data-theme="day"]) .hero-content p {
+    color: #aaaaaa;
+}
+
+body:not([data-theme="day"]) .hero-content h4 {
+    color: var(--red);
+}
+
+
+/* Discover button */
+
+body:not([data-theme="day"]) .hero-buttons .btn-outline-dark {
+    background-color: #1c1c1c !important;
+    color: #ffffff !important;
+    border-color: #555 !important;
+}
+
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+body:not([data-theme="day"]) main h1,
+body:not([data-theme="day"]) main h2 {
+    color: #ffffff;
+}
+
+
+/* =========================
+   POPULAR ARTISTS
+========================= */
+
+body:not([data-theme="day"]) .col-lg-2 h3 {
+    color: #ffffff;
+}
+
+
+/* =========================
+   RECENTLY PLAYED
+========================= */
+
+body:not([data-theme="day"]) .recent-header h2 {
+    color: #ffffff;
+}
+
+body:not([data-theme="day"]) .song {
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+body:not([data-theme="day"]) .song:first-child {
+    border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+body:not([data-theme="day"]) .song:hover {
+    background: rgba(179, 38, 26, 0.12);
+}
+
+body:not([data-theme="day"]) .song-info h3 {
+    color: #ffffff;
+}
+
+body:not([data-theme="day"]) .song-info p,
+body:not([data-theme="day"]) .song-duration {
+    color: #999999;
+}
+
+body:not([data-theme="day"]) .song.playing {
+    background: rgba(179, 38, 26, 0.15);
+}
+
+
+/* =========================
+   GENRE CARDS
+========================= */
+
+body:not([data-theme="day"]) .card-bg {
+    border-color: #333333;
+}
+
+
+/* =========================
+   THEME BUTTON
+========================= */
+
+body:not([data-theme="day"]) .theme-btn {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================
+   SIGN UP MODAL
+========================= */
+
+body:not([data-theme="day"]) .modal-box {
+    background-color: #1b1b1b;
+    color: #ffffff;
+}
+
+body:not([data-theme="day"]) .modal-head h2 {
+    color: #ffffff;
+}
+
+body:not([data-theme="day"]) .m-field label {
+    color: #dddddd;
+}
+
+body:not([data-theme="day"]) .m-field input {
+    background-color: #111111;
+    color: #ffffff;
+    border-color: #444444;
+}
+
+body:not([data-theme="day"]) .m-field input::placeholder {
+    color: #777777;
+}
+
+body:not([data-theme="day"]) .modal-close {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+body:not([data-theme="day"]) .m-note {
+    color: #888888;
+}
+
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+body:not([data-theme="day"]) .nav-label {
+    background-color: #161616;
+    color: #ffffff;
+}
+
+
+/* =========================
+   SMOOTH TRANSITION
+========================= */
+
+.sidebar,
+main,
+.song,
+.song-info h3,
+.song-info p,
+.recent-header h2,
+.hero-content h1,
+.hero-content p,
+.theme-btn,
+.modal-box,
+.m-field input {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
 /* =========================
        LINKS
     ========================= */
