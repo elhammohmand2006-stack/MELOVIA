@@ -1,0 +1,1991 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Inter", sans-serif;
+
+    background: #f4f3f2;
+    color: #050000;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --red: #b3261a;
+    --dark-red: #980408;
+
+    --black: #050000;
+
+    --white: #ffffff;
+
+    --gray: #666666;
+
+    --light-gray: #d6d3d4;
+
+    --sidebar-bg: #dbdad9;
+
+    --card-bg: #ffffff;
+
+    --page-bg: #f4f3f2;
+
+    --sidebar-width: 250px;
+
+}
+
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: var(--sidebar-width);
+
+    padding: 32px 22px;
+
+    background: var(--sidebar-bg);
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 100;
+
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.brand {
+
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: var(--black);
+
+    margin-bottom: 40px;
+}
+
+
+.brand span {
+    color: var(--red);
+}
+
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.nav-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    flex: 1;
+}
+
+
+.nav-links a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px 14px;
+
+    border-radius: 12px;
+
+    color: #111111;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    transition: all 0.25s ease;
+}
+
+
+.nav-links a i {
+
+    width: 20px;
+
+    text-align: center;
+
+    font-size: 15px;
+}
+
+
+.nav-links a:hover {
+
+    background: rgba(179, 38, 26, 0.12);
+
+    color: var(--red);
+
+    transform: translateX(3px);
+}
+
+
+.nav-links a.active {
+
+    background: linear-gradient(
+        120deg,
+        var(--red),
+        var(--dark-red)
+    );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 18px rgba(179, 38, 26, 0.25);
+}
+
+
+.nav-links a.active:hover {
+
+    color: #ffffff;
+
+    transform: none;
+}
+
+
+
+/* =====================================================
+   SIDEBAR BOTTOM
+===================================================== */
+
+.sidebar-bottom {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+
+/* =====================================================
+   SIGN UP BUTTON
+===================================================== */
+
+.signup-button {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: linear-gradient(
+        120deg,
+        var(--red),
+        var(--dark-red)
+    );
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+.signup-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(179, 38, 26, 0.25);
+}
+
+
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
+
+.theme-button {
+
+    width: 100%;
+
+    padding: 12px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 11px;
+
+    border: 1px solid #c5c3c3;
+
+    background: transparent;
+
+    color: #111111;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+.theme-button:hover {
+
+    background: var(--red);
+
+    border-color: var(--red);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+.theme-icon {
+
+    font-size: 17px;
+}
+
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.main-content {
+
+    margin-left: var(--sidebar-width);
+
+    min-height: calc(100vh - 170px);
+
+    background: var(--page-bg);
+
+    transition: background 0.3s ease;
+}
+
+
+.container {
+
+    width: min(1150px, calc(100% - 60px));
+
+    margin: auto;
+}
+
+
+
+/* =====================================================
+   GENRES SECTION
+===================================================== */
+
+.genres-section {
+
+    padding: 70px 0 90px;
+}
+
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.genres-title {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.small-title {
+
+    display: inline-block;
+
+    color: var(--red);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 10px;
+}
+
+
+.genres-title h1 {
+
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    font-size: 48px;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    color: var(--black);
+
+    margin-bottom: 14px;
+
+    transition: color 0.3s ease;
+}
+
+
+.genres-title p {
+
+    color: #666666;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    transition: color 0.3s ease;
+}
+
+
+
+/* =====================================================
+   GENRE FILTER BUTTONS
+===================================================== */
+
+.genre-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.genre-button {
+    padding: 10px 20px;
+    min-width: 70px;
+
+    border-radius: 30px;
+
+    border: 1px solid #c8c6c6;
+
+    background: #ffffff;
+
+    /* رنگ متن دکمه */
+    color: #222222;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Hover */
+.genre-button:hover {
+    background: #f5e8e7;
+    border-color: #b3261a;
+    color: #980408;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 6px 15px rgba(179, 38, 26, 0.15);
+}
+
+
+/* دکمه انتخاب شده */
+.genre-button.active {
+    background: linear-gradient(
+        120deg,
+        #b3261a,
+        #980408
+    );
+
+    border-color: #b3261a;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 18px rgba(179, 38, 26, 0.25);
+}
+
+
+/* Hover روی دکمه انتخاب شده */
+.genre-button.active:hover {
+    background: linear-gradient(
+        120deg,
+        #b3261a,
+        #980408
+    );
+
+    color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
+/* وقتی روی دکمه کلیک می‌شود */
+.genre-button:active {
+    transform: scale(0.95);
+}
+
+/* =====================================================
+   DARK MODE - GENRE BUTTONS
+===================================================== */
+
+body.dark-mode .genre-button {
+    background: #181818;
+
+    border-color: #3d3d3d;
+
+    color: #ffffff;
+}
+
+
+body.dark-mode .genre-button:hover {
+    background: #2a1715;
+
+    border-color: #b3261a;
+
+    color: #ffffff;
+}
+
+
+body.dark-mode .genre-button.active {
+    background: linear-gradient(
+        120deg,
+        #b3261a,
+        #980408
+    );
+
+    border-color: #b3261a;
+
+    color: #ffffff;
+}
+
+
+
+
+
+/* =====================================================
+   GENRE GRID
+===================================================== */
+
+.genres-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+
+/* =====================================================
+   GENRE CARD
+===================================================== */
+
+.genre-card {
+
+    background: var(--card-bg);
+
+    border: 1px solid var(--light-gray);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(5, 0, 0, 0.07);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border 0.3s ease;
+
+    animation: cardShow 0.35s ease;
+}
+
+
+.genre-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(5, 0, 0, 0.15);
+}
+
+
+@keyframes cardShow {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   CARD IMAGE
+===================================================== */
+
+.genre-image {
+
+    width: 100%;
+
+    height: 220px;
+
+    overflow: hidden;
+}
+
+
+.genre-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.genre-card:hover .genre-image img {
+
+    transform: scale(1.06);
+}
+
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.genre-content {
+
+    padding: 24px;
+}
+
+
+.genre-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--red);
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    margin-bottom: 17px;
+}
+
+
+.genre-content h2 {
+
+    font-family:
+        "Bricolage Grotesque",
+        sans-serif;
+
+    color: var(--black);
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+    transition: color 0.3s ease;
+}
+
+
+.genre-content p {
+
+    color: #666666;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+
+    transition: color 0.3s ease;
+}
+
+
+
+/* =====================================================
+   EXPLORE BUTTON
+===================================================== */
+
+.explore-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--red);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        gap 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.explore-button:hover {
+
+    gap: 13px;
+
+    color: var(--dark-red);
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+    margin-left: var(--sidebar-width);
+
+    background: #050000;
+
+    color: #d6d3d4;
+
+    padding: 45px 50px 20px;
+}
+
+
+.footer-logo {
+
+    font-family:
+        "Bricolage Grotesque",
+        sans-serif;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    margin-bottom: 30px;
+}
+
+
+.footer-logo span {
+
+    color: var(--red);
+}
+
+
+.footer-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.1);
+
+    font-size: 13px;
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+.footer-links a {
+
+    color: #aaa;
+
+    transition: color 0.2s ease;
+}
+
+
+.footer-links a:hover {
+
+    color: var(--red);
+}
+
+
+
+/* =====================================================
+   SIGN UP MODAL
+===================================================== */
+
+.signup-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.7);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: all 0.25s ease;
+
+    z-index: 500;
+}
+
+
+.signup-modal.show {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.modal-box {
+
+    width: 100%;
+
+    max-width: 400px;
+
+    padding: 35px;
+
+    background: #ffffff;
+
+    color: #050000;
+
+    border-radius: 18px;
+
+    position: relative;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.4);
+
+    transform: translateY(20px);
+
+    transition: transform 0.25s ease;
+}
+
+
+.signup-modal.show .modal-box {
+
+    transform: translateY(0);
+}
+
+
+.close-modal {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    width: 32px;
+
+    height: 32px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #eeeeee;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+.modal-box h2 {
+
+    font-family:
+        "Bricolage Grotesque",
+        sans-serif;
+
+    font-size: 27px;
+
+    margin-bottom: 8px;
+}
+
+
+.modal-box > p {
+
+    color: #666;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+.modal-box form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.modal-box label {
+
+    color: var(--dark-red);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-top: 8px;
+}
+
+
+.modal-box input {
+
+    padding: 12px 14px;
+
+    border: 1px solid #d6d3d4;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+
+.modal-box input:focus {
+
+    border-color: var(--red);
+
+    box-shadow:
+        0 0 0 2px rgba(179,38,26,0.12);
+}
+
+
+.submit-button {
+
+    margin-top: 15px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--red),
+            var(--dark-red)
+        );
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark-mode {
+
+    --page-bg: #090909;
+
+    --card-bg: #151515;
+
+    --sidebar-bg: #111111;
+
+    --black: #ffffff;
+
+    --gray: #aaaaaa;
+
+    --light-gray: #303030;
+
+    background: #090909;
+
+    color: #ffffff;
+}
+
+
+body.dark-mode .sidebar {
+
+    border-right-color:
+        rgba(255,255,255,0.08);
+}
+
+
+body.dark-mode .brand {
+
+    color: #ffffff;
+}
+
+
+body.dark-mode .nav-links a {
+
+    color: #dddddd;
+}
+
+
+body.dark-mode .nav-links a:hover {
+
+    background:
+        rgba(179,38,26,0.18);
+
+    color: #ffffff;
+}
+
+
+body.dark-mode .nav-links a.active {
+
+    color: #ffffff;
+}
+
+
+body.dark-mode .theme-button {
+
+    background: #181818;
+
+    border-color: #3a3a3a;
+
+    color: #ffffff;
+}
+
+
+body.dark-mode .theme-button:hover {
+
+    background: var(--red);
+
+    border-color: var(--red);
+}
+
+
+
+/* =====================================================
+   DARK MODE - GENRE BUTTONS
+===================================================== */
+
+/*
+   این قسمت مشکل اصلی JAZZ / POP را حل می‌کند.
+*/
+
+body.dark-mode .genre-button {
+
+    background: #171717;
+
+    border-color: #3b3b3b;
+
+    color: #ffffff;
+}
+
+
+body.dark-mode .genre-button:hover {
+
+    background: #2b1715;
+
+    border-color: var(--red);
+
+    color: #ffffff;
+}
+
+
+body.dark-mode .genre-button.active {
+
+    background:
+        linear-gradient(
+            120deg,
+            var(--red),
+            var(--dark-red)
+        );
+
+    border-color: var(--red);
+
+    color: #ffffff;
+}
+
+
+body.dark-mode .genre-button.active:hover {
+
+    color: #ffffff;
+}
+
+
+
+/* =====================================================
+   DARK MODE - CARDS
+===================================================== */
+
+body.dark-mode .genre-card {
+
+    border-color: #2c2c2c;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.35);
+}
+
+
+body.dark-mode .genre-card:hover {
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.5);
+}
+
+
+body.dark-mode .genre-content h2 {
+
+    color: #ffffff;
+}
+
+
+body.dark-mode .genre-content p {
+
+    color: #aaaaaa;
+}
+
+
+body.dark-mode .genres-title h1 {
+
+    color: #ffffff;
+}
+
+
+body.dark-mode .genres-title p {
+
+    color: #aaaaaa;
+}
+
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+#nav-toggle {
+
+    display: none;
+}
+
+
+.menu-button {
+
+    display: none;
+
+    position: fixed;
+
+    top: 15px;
+
+    left: 15px;
+
+    width: 43px;
+
+    height: 43px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--red);
+
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    z-index: 300;
+
+    font-size: 18px;
+}
+
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .genres-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .menu-button {
+
+        display: flex;
+
+    }
+
+
+    .sidebar {
+
+        transform: translateX(-100%);
+
+        box-shadow:
+            10px 0 30px rgba(0,0,0,0.2);
+    }
+
+
+    #nav-toggle:checked ~ .sidebar {
+
+        transform: translateX(0);
+
+    }
+
+
+    .main-content {
+
+        margin-left: 0;
+
+    }
+
+
+    .footer {
+
+        margin-left: 0;
+
+    }
+
+
+    .container {
+
+        width:
+            calc(100% - 30px);
+
+    }
+
+
+    .genres-section {
+
+        padding-top: 80px;
+
+    }
+
+
+    .genres-title h1 {
+
+        font-size: 36px;
+
+    }
+
+
+    .genres-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .genre-buttons {
+
+        gap: 8px;
+
+    }
+
+
+    .genre-button {
+
+        padding: 9px 15px;
+
+        font-size: 12px;
+
+        min-width: 60px;
+
+    }
+
+
+    .footer {
+
+        padding: 40px 25px 20px;
+
+    }
+
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+    .genres-title h1 {
+
+        font-size: 31px;
+
+    }
+
+
+    .genres-title p {
+
+        font-size: 14px;
+
+    }
+
+
+    .genre-button {
+
+        padding: 8px 12px;
+
+        font-size: 11px;
+
+    }
+
+}
+
+/* =====================================================
+   EXTRA ANIMATIONS
+===================================================== */
+
+
+/* -----------------------------
+   PAGE LOAD
+------------------------------ */
+
+.genres-title {
+    animation: titleEnter 0.8s ease both;
+}
+
+@keyframes titleEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+
+/* -----------------------------
+   SMALL TITLE
+------------------------------ */
+
+.small-title {
+    animation: smallTitle 0.7s ease both;
+    animation-delay: 0.15s;
+}
+
+@keyframes smallTitle {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+        letter-spacing: 8px;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 4px;
+    }
+
+}
+
+
+
+/* -----------------------------
+   GENRE BUTTONS
+------------------------------ */
+
+.genre-button {
+    animation: buttonEnter 0.5s ease both;
+}
+
+
+/* هر دکمه کمی با تأخیر وارد شود */
+
+.genre-button:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.genre-button:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.genre-button:nth-child(3) {
+    animation-delay: 0.20s;
+}
+
+.genre-button:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+.genre-button:nth-child(5) {
+    animation-delay: 0.30s;
+}
+
+.genre-button:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.genre-button:nth-child(7) {
+    animation-delay: 0.40s;
+}
+
+
+@keyframes buttonEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+
+/* -----------------------------
+   BUTTON HOVER
+------------------------------ */
+
+.genre-button:hover {
+
+    transform: translateY(-3px) scale(1.03);
+
+}
+
+
+.genre-button:active {
+
+    transform: scale(0.95);
+
+}
+
+
+
+/* -----------------------------
+   CARD ENTRANCE
+------------------------------ */
+
+.genre-card {
+
+    animation:
+        cardEnter 0.7s ease both;
+}
+
+
+.genre-card:nth-child(1) {
+    animation-delay: 0.15s;
+}
+
+.genre-card:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.genre-card:nth-child(3) {
+    animation-delay: 0.35s;
+}
+
+.genre-card:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+.genre-card:nth-child(5) {
+    animation-delay: 0.55s;
+}
+
+.genre-card:nth-child(6) {
+    animation-delay: 0.65s;
+}
+
+
+@keyframes cardEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+
+/* -----------------------------
+   CARD HOVER
+------------------------------ */
+
+.genre-card {
+
+    transition:
+        transform 0.35s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.35s ease;
+}
+
+
+.genre-card:hover {
+
+    transform:
+        translateY(-10px)
+        scale(1.01);
+
+}
+
+
+
+/* -----------------------------
+   IMAGE ZOOM
+------------------------------ */
+
+.genre-image {
+
+    overflow: hidden;
+}
+
+
+.genre-image img {
+
+    transition:
+        transform 0.7s cubic-bezier(.2,.8,.2,1);
+}
+
+
+.genre-card:hover .genre-image img {
+
+    transform: scale(1.08);
+
+}
+
+
+
+/* -----------------------------
+   ICON ANIMATION
+------------------------------ */
+
+.genre-icon {
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.genre-card:hover .genre-icon {
+
+    transform:
+        rotate(-5deg)
+        scale(1.08);
+
+    box-shadow:
+        0 8px 20px rgba(179, 38, 26, 0.3);
+
+}
+
+
+
+/* -----------------------------
+   EXPLORE ARROW
+------------------------------ */
+
+.explore-button i {
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.explore-button:hover i {
+
+    transform: translateX(6px);
+
+}
+
+
+
+/* -----------------------------
+   SIDEBAR LINKS
+------------------------------ */
+
+.nav-links a {
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.nav-links a:hover {
+
+    transform: translateX(5px);
+
+}
+
+
+.nav-links a i {
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.nav-links a:hover i {
+
+    transform: scale(1.15);
+
+}
+
+
+
+/* -----------------------------
+   SIGN UP BUTTON
+------------------------------ */
+
+.signup-button {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.signup-button::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.25),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left 0.6s ease;
+}
+
+
+.signup-button:hover::before {
+
+    left: 130%;
+
+}
+
+
+
+/* -----------------------------
+   THEME BUTTON
+------------------------------ */
+
+.theme-button {
+
+    transition:
+        transform 0.25s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.theme-button:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+.theme-icon {
+
+    display: inline-block;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.theme-button:hover .theme-icon {
+
+    transform:
+        rotate(20deg)
+        scale(1.15);
+
+}
+
+
+
+/* -----------------------------
+   DARK MODE TRANSITION
+------------------------------ */
+
+body,
+.sidebar,
+.main-content,
+.genre-card,
+.genre-button,
+.theme-button,
+.genres-title h1,
+.genres-title p,
+.genre-content h2,
+.genre-content p {
+
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+
+
+/* -----------------------------
+   MODAL ANIMATION
+------------------------------ */
+
+.signup-modal {
+
+    backdrop-filter: blur(0px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        backdrop-filter 0.3s ease;
+}
+
+
+.signup-modal.show {
+
+    backdrop-filter: blur(5px);
+
+}
+
+
+.modal-box {
+
+    animation: none;
+
+}
+
+
+.signup-modal.show .modal-box {
+
+    animation:
+        modalEnter 0.4s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+@keyframes modalEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.94);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+
+/* -----------------------------
+   CLOSE BUTTON
+------------------------------ */
+
+.close-modal {
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.close-modal:hover {
+
+    transform:
+        rotate(90deg)
+        scale(1.1);
+
+    background: var(--red);
+
+    color: white;
+
+}
+
+
+
+/* -----------------------------
+   FILTER CARD ANIMATION
+------------------------------ */
+
+.genre-card.hide-card {
+
+    animation:
+        cardHide 0.3s ease forwards;
+
+}
+
+
+@keyframes cardHide {
+
+    from {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+    to {
+
+        opacity: 0;
+
+        transform: scale(0.92);
+
+    }
+
+}
+
+
+
+/* -----------------------------
+   FOOTER
+------------------------------ */
+
+.footer-logo {
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.footer-logo:hover {
+
+    transform: translateX(5px);
+
+}
+
+
+.footer-links a {
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.footer-links a:hover {
+
+    transform: translateX(3px);
+
+}
+
+
+
+/* -----------------------------
+   ACCESSIBILITY
+------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+
+    }
+
+}

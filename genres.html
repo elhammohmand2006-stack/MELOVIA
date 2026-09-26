@@ -1,213 +1,731 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genres</title>
 
-    <!-- Bootstrap css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Melovia - Music Genres</title>
 
-     <!-- Bootstap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Bootstap Icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    <!-- CSS link -->
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="genres.css">
 </head>
+
+
 <body>
-    <div class="container">
 
-    <!-- Genres Title -->
-    <div class="genres-title text-center">
-        <span>EXPLORE</span>
-        <h1>Music Genres</h1>
-        <p>
-            Discover different sounds, moods, and styles
-            from around the world.
-        </p>
+    <!-- =====================================
+         MOBILE MENU
+    ====================================== -->
+
+    <input type="checkbox" id="nav-toggle">
+
+    <label for="nav-toggle" class="menu-button">
+        <i class="fa-solid fa-bars"></i>
+    </label>
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="brand">
+            MELOVIA<span>.</span>
+        </div>
+
+
+        <!-- Navigation -->
+        <nav class="nav-links">
+
+            <a href="index.html">
+                <span>Home</span>
+            </a>
+
+            <a href="discover.html">
+                <span>Discover</span>
+            </a>
+
+            <a href="artists.html">
+                <span>Artists</span>
+            </a>
+
+            <a href="albums.html">
+                <span>Albums</span>
+            </a>
+
+            <a href="genres.html" class="active">
+                <span>Genres</span>
+            </a>
+
+            <a href="events.html">
+                <span>Events</span>
+            </a>
+
+            <a href="contact.html">
+                <span>Contact</span>
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+        <div class="sidebar-bottom">
+
+            <!-- Sign Up -->
+            <button class="signup-button" id="openSignup">
+                Sign Up
+            </button>
+
+
+            <!-- Theme -->
+            <button class="theme-button" id="themeButton">
+
+                <span class="theme-icon" id="themeIcon">
+                    🌙
+                </span>
+
+                <span id="themeText">
+                    Night mode
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main class="main-content">
+
+        <section class="genres-section">
+
+            <div class="container">
+
+
+                <!-- =====================================
+                     PAGE TITLE
+                ====================================== -->
+
+                <div class="genres-title">
+
+                    <span class="small-title">
+                        EXPLORE
+                    </span>
+
+                    <h1>
+                        Music Genres
+                    </h1>
+
+                    <p>
+                        Discover different sounds, moods, and styles
+                        from around the world.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     GENRE BUTTONS
+                ====================================== -->
+
+                <div class="genre-buttons">
+
+                    <button
+                        class="genre-button active"
+                        data-genre="all">
+
+                        ALL
+
+                    </button>
+
+
+                    <button
+                        class="genre-button"
+                        data-genre="pop">
+
+                        POP
+
+                    </button>
+
+
+                    <button
+                        class="genre-button"
+                        data-genre="rock">
+
+                        ROCK
+
+                    </button>
+
+
+                    <button
+                        class="genre-button"
+                        data-genre="metal">
+
+                        Metal
+
+                    </button>
+
+
+                    <button
+                        class="genre-button"
+                        data-genre="hiphop">
+
+                        HIP-HOP
+
+                    </button>
+
+
+                    <button
+                        class="genre-button"
+                        data-genre="kpop">
+
+                        Kpop & Jpop
+
+                    </button>
+
+
+                    <button
+                        class="genre-button"
+                        data-genre="rnb">
+
+                        R&B
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     GENRE CARDS
+                ====================================== -->
+
+                <div class="genres-grid">
+
+
+                    <!-- POP -->
+
+                    <article
+                        class="genre-card"
+                        data-category="pop">
+
+                        <div class="genre-image">
+
+                            <img
+                                src="images/pop.jpg"
+                                alt="Pop Music">
+
+                        </div>
+
+                        <div class="genre-content">
+
+                            <div class="genre-icon">
+                                <i class="fa-solid fa-music"></i>
+                            </div>
+
+                            <h2>
+                                Pop
+                            </h2>
+
+                            <p>
+                                Catchy melodies and modern sounds
+                                loved by millions.
+                            </p>
+
+                            <a href="#" class="explore-button">
+                                Explore
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ROCK -->
+
+                    <article
+                        class="genre-card"
+                        data-category="rock">
+
+                        <div class="genre-image">
+
+                            <img
+                                src="images/rock.jpg"
+                                alt="Rock Music">
+
+                        </div>
+
+                        <div class="genre-content">
+
+                            <div class="genre-icon">
+                                <i class="fa-solid fa-guitar"></i>
+                            </div>
+
+                            <h2>
+                                Rock
+                            </h2>
+
+                            <p>
+                                Powerful guitars, strong rhythms,
+                                and unforgettable energy.
+                            </p>
+
+                            <a href="#" class="explore-button">
+                                Explore
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- JAZZ -->
+
+                    <article
+                        class="genre-card"
+                        data-category="metal">
+
+                        <div class="genre-image">
+
+                            <img
+                                src="images/metal.jpg"
+                                alt="metal Music">
+
+                        </div>
+
+                        <div class="genre-content">
+
+                            <div class="genre-icon">
+                                <i class="fa-solid fa-music"></i>
+                            </div>
+
+                            <h2>
+                                Metal
+                            </h2>
+
+                            <p>
+                                Smooth melodies and creative
+                                rhythms full of emotion.
+                            </p>
+
+                            <a href="#" class="explore-button">
+                                Explore
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- HIP HOP -->
+
+                    <article
+                        class="genre-card"
+                        data-category="hiphop">
+
+                        <div class="genre-image">
+
+                            <img
+                                src="images/hiphop.jpg"
+                                alt="Hip-Hop Music">
+
+                        </div>
+
+                        <div class="genre-content">
+
+                            <div class="genre-icon">
+                                <i class="fa-solid fa-headphones"></i>
+                            </div>
+
+                            <h2>
+                                Hip-Hop
+                            </h2>
+
+                            <p>
+                                Rhythm, flow, beats, and stories
+                                expressed through music.
+                            </p>
+
+                            <a href="#" class="explore-button">
+                                Explore
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Kpop Jpop -->
+
+                    <article
+                        class="genre-card"
+                        data-category="kpop">
+
+                        <div class="genre-image">
+
+                            <img
+                                src="images/kpop and jpop.jpg"
+                                alt="Classical Music">
+
+                        </div>
+
+                        <div class="genre-content">
+
+                            <div class="genre-icon">
+                                <i class="fa-solid fa-music"></i>
+                            </div>
+
+                            <h2>
+                               Kpop & Jpop
+                            </h2>
+
+                            <p>
+                                Timeless compositions and beautiful
+                                instrumental melodies.
+                            </p>
+
+                            <a href="#" class="explore-button">
+                                Explore
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- R&B -->
+
+                    <article
+                        class="genre-card"
+                        data-category="rnb">
+
+                        <div class="genre-image">
+
+                            <img
+                                src="images/rnb.jpg"
+                                alt="R&B Music">
+
+                        </div>
+
+                        <div class="genre-content">
+
+                            <div class="genre-icon">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
+
+                            <h2>
+                                R&B
+                            </h2>
+
+                            <p>
+                                Soulful vocals and smooth rhythms
+                                with a unique feeling.
+                            </p>
+
+                            <a href="#" class="explore-button">
+                                Explore
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+            MELOVIA<span>.</span>
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 MELOVIA. All rights reserved.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms of Service
+                </a>
+
+                <a href="#">
+                    Cookies
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================
+         SIGN UP MODAL
+    ====================================== -->
+
+    <div class="signup-modal" id="signupModal">
+
+        <div class="modal-box">
+
+            <button
+                class="close-modal"
+                id="closeSignup">
+
+                ×
+
+            </button>
+
+            <h2>
+                Create Account
+            </h2>
+
+            <p>
+                Join Melovia and discover new music.
+            </p>
+
+
+            <form>
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    placeholder="you@email.com">
+
+
+                <label>
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Choose a username">
+
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    placeholder="••••••••">
+
+
+                <button
+                    type="submit"
+                    class="submit-button">
+
+                    Create Account
+
+                </button>
+
+            </form>
+
+        </div>
+
     </div>
 
-    <!-- Genres Cards -->
-    <div class="row g-4">
-
-        <!-- Pop -->
-        <div class="col-lg-4 col-md-6">
-            <div class="genres-card">
-
-                <div class="genres-image">
-                    <img src="images/pop.jpg" alt="Pop Music">
-                </div>
-
-                <div class="genres-content">
-                    <div class="genres-icon">
-                        <i class="fa-solid fa-music"></i>
-                    </div>
-
-                    <h2>Pop</h2>
-
-                    <p>
-                        Catchy melodies and modern sounds
-                        loved by millions.
-                    </p>
-
-                    <a href="#" class="genres-button">
-                        Explore <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-            </div>
-        </div>
 
 
-        <!-- Rock -->
-        <div class="col-lg-4 col-md-6">
-            <div class="genres-card">
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
 
-                <div class="genres-image">
-                    <img src="images/rock.jpg" alt="Rock Music">
-                </div>
+    <script>
 
-                <div class="genres-content">
-                    <div class="genres-icon">
-                        <i class="fa-solid fa-guitar"></i>
-                    </div>
+        /* ================================
+           DARK / LIGHT MODE
+        ================================= */
 
-                    <h2>Rock</h2>
+        const themeButton =
+            document.getElementById("themeButton");
 
-                    <p>
-                        Powerful guitars, strong rhythms,
-                        and unforgettable energy.
-                    </p>
+        const themeIcon =
+            document.getElementById("themeIcon");
 
-                    <a href="#" class="genres-button">
-                        Explore <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-            </div>
-        </div>
+        const themeText =
+            document.getElementById("themeText");
 
 
-        <!-- Jazz -->
-        <div class="col-lg-4 col-md-6">
-            <div class="genres-card">
+        themeButton.addEventListener("click", function () {
 
-                <div class="genres-image">
-                    <img src="images/jazz.jpg" alt="Jazz Music">
-                </div>
-
-                <div class="genres-content">
-                    <div class="genres-icon">
-                        <i class="fa-solid fa-saxophone"></i>
-                    </div>
-
-                    <h2>Jazz</h2>
-
-                    <p>
-                        Smooth melodies and creative
-                        rhythms full of emotion.
-                    </p>
-
-                    <a href="#" class="genres-button">
-                        Explore <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-            </div>
-        </div>
+            document.body.classList.toggle("dark-mode");
 
 
-        <!-- Hip-Hop -->
-        <div class="col-lg-4 col-md-6">
-            <div class="genres-card">
+            if (
+                document.body.classList.contains("dark-mode")
+            ) {
 
-                <div class="genres-image">
-                    <img src="images/hiphop.jpg" alt="Hip-Hop Music">
-                </div>
+                themeIcon.textContent = "☀️";
+                themeText.textContent = "Light mode";
 
-                <div class="genres-content">
-                    <div class="genres-icon">
-                        <i class="fa-solid fa-headphones"></i>
-                    </div>
+            } else {
 
-                    <h2>Hip-Hop</h2>
+                themeIcon.textContent = "🌙";
+                themeText.textContent = "Night mode";
 
-                    <p>
-                        Rhythm, flow, beats, and stories
-                        expressed through music.
-                    </p>
+            }
 
-                    <a href="#" class="genres-button">
-                        Explore <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-            </div>
-        </div>
+        });
 
 
-        <!-- Classical -->
-        <div class="col-lg-4 col-md-6">
-            <div class="genres-card">
 
-                <div class="genres-image">
-                    <img src="images/classical.jpg" alt="Classical Music">
-                </div>
+        /* ================================
+           GENRE FILTER
+        ================================= */
 
-                <div class="genres-content">
-                    <div class="genres-icon">
-                        <i class="fa-solid fa-music"></i>
-                    </div>
+        const genreButtons =
+            document.querySelectorAll(".genre-button");
 
-                    <h2>Classical</h2>
-
-                    <p>
-                        Timeless compositions and beautiful
-                        instrumental melodies.
-                    </p>
-
-                    <a href="#" class="genres-button">
-                        Explore <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-            </div>
-        </div>
+        const genreCards =
+            document.querySelectorAll(".genre-card");
 
 
-        <!-- R&B -->
-        <div class="col-lg-4 col-md-6">
-            <div class="genres-card">
+        genreButtons.forEach(function (button) {
 
-                <div class="genres-image">
-                    <img src="images/rnb.jpg" alt="R&B Music">
-                </div>
+            button.addEventListener("click", function () {
 
-                <div class="genres-content">
-                    <div class="genres-icon">
-                        <i class="fa-solid fa-microphone"></i>
-                    </div>
+                /* Remove active from all buttons */
 
-                    <h2>R&B</h2>
+                genreButtons.forEach(function (btn) {
 
-                    <p>
-                        Soulful vocals and smooth rhythms
-                        with a unique feeling.
-                    </p>
+                    btn.classList.remove("active");
 
-                    <a href="#" class="genres-button">
-                        Explore <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
+                });
 
-            </div>
-        </div>
 
-    </div>
+                /* Add active to clicked button */
 
-</div>
+                button.classList.add("active");
+
+
+                const selectedGenre =
+                    button.dataset.genre;
+
+
+                genreCards.forEach(function (card) {
+
+                    const cardGenre =
+                        card.dataset.category;
+
+
+                    if (
+                        selectedGenre === "all" ||
+                        selectedGenre === cardGenre
+                    ) {
+
+                        card.style.display = "block";
+
+                    } else {
+
+                        card.style.display = "none";
+
+                    }
+
+                });
+
+            });
+
+        });
+
+
+
+        /* ================================
+           SIGN UP MODAL
+        ================================= */
+
+        const signupModal =
+            document.getElementById("signupModal");
+
+        const openSignup =
+            document.getElementById("openSignup");
+
+        const closeSignup =
+            document.getElementById("closeSignup");
+
+
+        openSignup.addEventListener("click", function () {
+
+            signupModal.classList.add("show");
+
+        });
+
+
+        closeSignup.addEventListener("click", function () {
+
+            signupModal.classList.remove("show");
+
+        });
+
+
+        signupModal.addEventListener("click", function (event) {
+
+            if (event.target === signupModal) {
+
+                signupModal.classList.remove("show");
+
+            }
+
+        });
+
+    </script>
+
 </body>
+
 </html>
