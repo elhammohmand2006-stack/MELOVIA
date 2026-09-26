@@ -16,6 +16,19 @@
 
     <!-- CSS link -->
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="home.css">
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
 
@@ -59,6 +72,22 @@
       <div class="side-foot">
         <label for="modal-toggle" class="signup-btn"> Sign Up </label>
       </div>
+
+       <button
+                type="button"
+                class="theme-btn"
+                id="theme-btn"
+            >
+
+                <span id="theme-icon">
+                    ☀️
+                </span>
+
+                <span id="theme-label">
+                    Day mode
+                </span>
+
+            </button>
     </aside>
 
     <!-- =========================
@@ -111,9 +140,11 @@
       </div>
     </div>
 <main>
+
+  <!-- Hero -->
      <section class="container">
         <div class="row gy-3">
-  <div class="col-lg-7 hero-content me-5">
+  <div class="col-lg-7 hero-content">
 <h4>MUSIC FOR EVERY MOOD</h4>
 <h1 class="w-50">Feel the music.
 Live the <span>moment</span></h1>
@@ -122,13 +153,9 @@ Live the <span>moment</span></h1>
 <button class="btn rounded-pill">Explore Music</button>
 <button class="btn btn-outline-dark bg-light text-dark rounded-pill">Discover</button>
   </div>
-
   
-  <img src="Image/vinyl.png" alt="" class="vinyl">
-  
-  <div class="col-lg-4 hero-music">
-    <h2>Now Playing</h2>
-    
+  <div class="col-lg-5 hero-vinyl">
+    <img src="Image/vinyl.png" alt="" id="hero-vinyl">
   </div>
 
         </div>
@@ -156,8 +183,8 @@ Live the <span>moment</span></h1>
     <h3 class="my-2 text-center">Michael jackson</h3>
 </div>
 <div class="col-lg-2 col-md-6">
-    <img src="Image/gui.jpg" alt="" class="w-100 rounded-pill">
-    <h3 class="my-2 text-center">Gui Bian</h3>
+    <img src="Image/selena.gif" alt="" class="w-100 rounded-pill">
+    <h3 class="my-2 text-center">Selena Gomez</h3>
 </div>
         </div>
 
@@ -256,43 +283,43 @@ Live the <span>moment</span></h1>
          
         <div class="row gy-3">
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg" style="background-image: url(Image/pop.jpg);">
-                <div class="div-body"><h1>POP</h1></div>
+               <div class="card card-bg hover-card" style="background-image: url(Image/pop.jpg);">
+                <div class="div-body"><h1 class="fw-bold">POP</h1></div>
                </div>
             </div>
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg" style="background-image: url(Image/rock.jpg);">
-                <div class="div-body"><h1>Rock</h1></div>
+               <div class="card card-bg hover-card" style="background-image: url(Image/rock.jpg);">
+                <div class="div-body"><h1 class="fw-bold">Rock</h1></div>
                </div>
             </div>
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg" style="background-image: url(Image/rap.jpg);">
-                <div class="div-body"><h1>HIP HOP</h1></div>
+               <div class="card card-bg hover-card" style="background-image: url(Image/rap.jpg);">
+                <div class="div-body"><h1 class="fw-bold">HIP HOP</h1></div>
                </div>
             </div>
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg" style="background-image: url(Image/electronic.jpg);">
-                <div class="div-body"><h1>ELECTRONIC</h1></div>
+               <div class="card card-bg hover-card" style="background-image: url(Image/electronic.jpg);">
+                <div class="div-body"><h1 class="fw-bold">ELECTRONIC</h1></div>
                </div>
             </div>
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg"  style="background-image: url(Image/jpop.jpg);">
-                <div class="div-body"><h1>J-POP</h1></div>
+               <div class="card card-bg hover-card"  style="background-image: url(Image/jpop.jpg);">
+                <div class="div-body"><h1 class="fw-bold">J-POP</h1></div>
                </div>
             </div>
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg" style="background-image: url(Image/kpop.jpg);">
-                <div class="div-body"><h1>K-POP</h1></div>
+               <div class="card card-bg hover-card" style="background-image: url(Image/kpop.jpg);">
+                <div class="div-body"><h1 class="fw-bold">K-POP</h1></div>
                </div>
             </div>
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg" style="background-image: url(Image/metal.jpg);">
-                <div class="div-body"><h1>METAL</h1></div>
+               <div class="card card-bg hover-card" style="background-image: url(Image/metal.jpg);">
+                <div class="div-body"><h1 class="fw-bold">METAL</h1></div>
                </div>
             </div>
             <div class="col-lg-3 col-md-6 text-strat">
-               <div class="card card-bg" style="background-image: url(Image/rb.jpg);">
-                <div class="div-body"><h1>R&B / SOUL</h1></div>
+               <div class="card card-bg hover-card" style="background-image: url(Image/rb.jpg);">
+                <div class="div-body"><h1 class="fw-bold">R&B / SOUL</h1></div>
                </div>
             </div>
         </div>
@@ -397,7 +424,6 @@ Live the <span>moment</span></h1>
     </section>
 </main>
 
-
    <script>
 
 const musicPlayer = document.getElementById("music-player");
@@ -419,6 +445,10 @@ const songElements = document.querySelectorAll(".song");
 
 const volumeBar = document.getElementById("volume-bar");
 const volumeIcon = document.getElementById("volume-icon");
+
+const heroVinyl = document.getElementById("hero-vinyl");
+
+
 
 
 /* =========================
@@ -529,18 +559,14 @@ function togglePlay() {
 ========================= */
 
 musicPlayer.addEventListener("play", function () {
-
-    playBtn.innerHTML =
-        '<i class="bi bi-pause-fill"></i>';
-
+  playBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+  heroVinyl.classList.add("playing");
 });
 
 
 musicPlayer.addEventListener("pause", function () {
-
-    playBtn.innerHTML =
-        '<i class="bi bi-play-fill"></i>';
-
+  playBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+  heroVinyl.classList.remove("playing");
 });
 
 
@@ -768,6 +794,142 @@ musicPlayer.addEventListener(
 ========================= */
 
 loadSong(0);
+
+
+/* =====================================================
+   DAY / NIGHT MODE
+===================================================== */
+
+const themeButton =
+    document.getElementById(
+        "theme-btn"
+    );
+
+
+const themeIcon =
+    document.getElementById(
+        "theme-icon"
+    );
+
+
+const themeLabel =
+    document.getElementById(
+        "theme-label"
+    );
+
+
+const body =
+    document.body;
+
+
+
+/* =====================================================
+   RESTORE SAVED THEME
+===================================================== */
+
+const savedTheme =
+    localStorage.getItem(
+        "melovia-theme"
+    );
+
+
+if (savedTheme === "day") {
+
+    body.setAttribute(
+        "data-theme",
+        "day"
+    );
+
+
+    themeIcon.textContent =
+        "🌙";
+
+
+    themeLabel.textContent =
+        "Night mode";
+
+}
+
+
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
+
+if (themeButton) {
+
+    themeButton.addEventListener(
+        "click",
+        function () {
+
+
+            const isDay =
+                body.getAttribute(
+                    "data-theme"
+                ) === "day";
+
+
+
+            if (isDay) {
+
+
+                /* =========================================
+                   CHANGE TO NIGHT
+                ========================================== */
+
+                body.removeAttribute(
+                    "data-theme"
+                );
+
+
+                themeIcon.textContent =
+                    "☀️";
+
+
+                themeLabel.textContent =
+                    "Day mode";
+
+
+                localStorage.setItem(
+                    "melovia-theme",
+                    "night"
+                );
+
+
+            }
+
+            else {
+
+
+                /* =========================================
+                   CHANGE TO DAY
+                ========================================== */
+
+                body.setAttribute(
+                    "data-theme",
+                    "day"
+                );
+
+
+                themeIcon.textContent =
+                    "🌙";
+
+
+                themeLabel.textContent =
+                    "Night mode";
+
+
+                localStorage.setItem(
+                    "melovia-theme",
+                    "day"
+                );
+
+            }
+
+        }
+    );
+
+}
 
 </script>
 
