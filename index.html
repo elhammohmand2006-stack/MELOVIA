@@ -16,8 +16,923 @@
 
     <!-- CSS link -->
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="home.css">
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
-    
+
+    <!-- =========================
+       MOBILE MENU
+  ========================== -->
+
+    <input type="checkbox" id="nav-toggle" />
+
+    <label for="nav-toggle" class="nav-label"> ☰ </label>
+
+    <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+    <aside class="sidebar">
+      <!-- Brand -->
+
+      <div class="brand">MELOVIA<span>.</span></div>
+
+      <!-- Navigation -->
+
+      <nav class="nav-links">
+        <a href="index.html" class="active"> Home </a>
+
+        <a href="discover.html"> Discover </a>
+
+        <a href="artists.html"> Artists </a>
+
+        <a href="albums.html"> Albums </a>
+
+        <a href="genres.html"> Genres </a>
+
+        <a href="events.html"> Events </a>
+
+        <a href="contact.html"> Contact </a>
+      </nav>
+
+      <!-- Sign Up -->
+
+      <div class="side-foot">
+        <label for="modal-toggle" class="signup-btn"> Sign Up </label>
+      </div>
+
+       <button
+                type="button"
+                class="theme-btn"
+                id="theme-btn"
+            >
+
+                <span id="theme-icon">
+                    ☀️
+                </span>
+
+                <span id="theme-label">
+                    Day mode
+                </span>
+
+            </button>
+    </aside>
+
+    <!-- =========================
+       SIGN UP MODAL
+  ========================== -->
+
+    <input type="checkbox" id="modal-toggle" />
+
+    <div class="modal-overlay">
+      <div class="modal-box">
+        <!-- Modal Header -->
+
+        <div class="modal-head">
+          <h2>Create Account</h2>
+
+          <label for="modal-toggle" class="modal-close"> ✕ </label>
+        </div>
+
+        <!-- Email -->
+
+        <div class="m-field">
+          <label> Email </label>
+
+          <input type="email" placeholder="you@email.com" />
+        </div>
+
+        <!-- Username -->
+
+        <div class="m-field">
+          <label> Username </label>
+
+          <input type="text" placeholder="Choose a username" />
+        </div>
+
+        <!-- Password -->
+
+        <div class="m-field">
+          <label> Password </label>
+
+          <input type="password" placeholder="••••••••" />
+        </div>
+
+        <!-- Submit -->
+
+        <a href="index.html" class="m-submit"> Submit </a>
+
+        <!-- Note -->
+
+        <div class="m-note">By signing up you agree to our terms.</div>
+      </div>
+    </div>
+<main>
+
+  <!-- Hero -->
+     <section class="container">
+        <div class="row gy-3">
+  <div class="col-lg-7 hero-content">
+<h4>MUSIC FOR EVERY MOOD</h4>
+<h1 class="w-50">Feel the music.
+Live the <span>moment</span></h1>
+<p class="w-50">Discover new artists, explore amazing albums, and find the perfect soundtrack for every moment from the quietest morning to the loudest night.</p>
+
+<button class="btn rounded-pill">Explore Music</button>
+<button class="btn btn-outline-dark bg-light text-dark rounded-pill">Discover</button>
+  </div>
+  
+  <div class="col-lg-5 hero-vinyl">
+    <img src="Image/vinyl.png" alt="" id="hero-vinyl">
+  </div>
+
+        </div>
+
+
+        <!-- Artists -->
+        <div class="row my-5 gy-3">
+            <div class="col-lg"><h1>Popular artists</h1></div>
+        </div>
+        <div class="row my-5 justify-content-center align-items-center">
+<div class="col-lg-2 col-md-6">
+    <img src="Image/adele.gif" alt="" class="w-100 rounded-pill">
+    <h3 class="my-2 text-center">Adele</h3>
+</div>
+<div class="col-lg-2 col-md-6">
+    <img src="Image/king.jpg" alt="" class="w-100 rounded-pill">
+    <h3 class="my-2 text-center">King Gnu</h3>
+</div>
+<div class="col-lg-2 col-md-6">
+    <img src="Image/taylor.gif" alt="" class="w-100 rounded-pill">
+    <h3 class="my-2 text-center">Taylor Swift</h3>
+</div>
+<div class="col-lg-2 col-md-6">
+    <img src="Image/michael.gif" alt="" class="w-100 rounded-pill">
+    <h3 class="my-2 text-center">Michael jackson</h3>
+</div>
+<div class="col-lg-2 col-md-6">
+    <img src="Image/selena.gif" alt="" class="w-100 rounded-pill">
+    <h3 class="my-2 text-center">Selena Gomez</h3>
+</div>
+        </div>
+
+<!-- 
+        Play Music -->
+        <div class="row my-5">
+    <div class="col-12">
+        <div class="recent-header">
+            <h2>Recently played</h2>
+        </div>
+
+        <div class="song-list">
+
+            <!-- Song 1 -->
+            <div class="song" data-song="0">
+
+                <img src="Image/song1.jpg" alt="Mr. Right Now">
+
+                <div class="song-info">
+                    <h3>Sonne</h3>
+                    <p>Rammstein</p>
+                </div>
+
+                <span class="song-duration">4:32</span>
+
+            </div>
+
+
+            <!-- Song 2 -->
+            <div class="song" data-song="1">
+
+                <img src="Image/song2.jpg" alt="Many Men">
+
+                <div class="song-info">
+                    <h3>Gui Bian</h3>
+                    <p>Beauty</p>
+                </div>
+
+                <span class="song-duration">3:20</span>
+
+            </div>
+
+
+            <!-- Song 3 -->
+            <div class="song" data-song="2">
+
+                <img src="Image/song3.jpg" alt="Song">
+
+                <div class="song-info">
+                    <h3>SPECIALZ</h3>
+                    <p>King Gnu</p>
+                </div>
+
+                <span class="song-duration">3:58</span>
+
+            </div>
+
+            <!-- Song 4 -->
+            <div class="song" data-song="3">
+
+                <img src="Image/song4.jpg" alt="Song">
+
+                <div class="song-info">
+                    <h3>Selena Gomez</h3>
+                    <p>Kill Em with Kindness</p>
+                </div>
+
+                <span class="song-duration">3:37</span>
+
+            </div>
+
+            <!-- Song 5 -->
+            <div class="song" data-song="4">
+
+                <img src="Image/song5.jpg" alt="Song">
+
+                <div class="song-info">
+                    <h3>Drama</h3>
+                    <p>aespa</p>
+                </div>
+
+                <span class="song-duration">3:35</span>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+        <!-- Genres -->
+
+         <div class="row gy-5 my-5">
+            <div class="col-lg"><h1>Explore by Genre</h1></div>
+        </div>
+         
+        <div class="row gy-3">
+            <div class="col-lg-3 col-md-6 text-strat">
+               <div class="card card-bg hover-card" style="background-image: url(Image/pop.jpg);">
+                <div class="div-body"><h1 class="fw-bold">POP</h1></div>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-strat">
+               <div class="card card-bg hover-card" style="background-image: url(Image/rock.jpg);">
+                <div class="div-body"><h1 class="fw-bold">Rock</h1></div>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-strat">
+               <div class="card card-bg hover-card" style="background-image: url(Image/rap.jpg);">
+                <div class="div-body"><h1 class="fw-bold">HIP HOP</h1></div>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-strat">
+               <div class="card card-bg hover-card" style="background-image: url(Image/electronic.jpg);">
+                <div class="div-body"><h1 class="fw-bold">ELECTRONIC</h1></div>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-strat">
+               <div class="card card-bg hover-card"  style="background-image: url(Image/jpop.jpg);">
+                <div class="div-body"><h1 class="fw-bold">J-POP</h1></div>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-strat">
+               <div class="card card-bg hover-card" style="background-image: url(Image/kpop.jpg);">
+                <div class="div-body"><h1 class="fw-bold">K-POP</h1></div>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-strat">
+               <div class="card card-bg hover-card" style="background-image: url(Image/metal.jpg);">
+                <div class="div-body"><h1 class="fw-bold">METAL</h1></div>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-strat">
+               <div class="card card-bg hover-card" style="background-image: url(Image/rb.jpg);">
+                <div class="div-body"><h1 class="fw-bold">R&B / SOUL</h1></div>
+               </div>
+            </div>
+        </div>
+
+
+        <!-- 
+     MUSIC PLAYER
+ -->
+
+<div class="music-player">
+
+    <!-- Current Song -->
+    <div class="player-song">
+
+        <img
+            id="player-cover"
+            src="Image/song1.jpg"
+            alt="Album cover"
+        >
+
+        <div>
+            <h3 id="player-title">Mr. Right Now</h3>
+            <p id="player-artist">Metro Boomin</p>
+        </div>
+
+    </div>
+
+
+    <!-- Controls -->
+    <div class="player-controls">
+
+        <!-- Previous -->
+        <button
+            type="button"
+            id="prev-btn"
+            class="btn"
+        >
+            <i class="bi bi-skip-start-fill"></i>
+        </button>
+
+
+        <!-- Play / Pause -->
+        <button
+            type="button"
+            id="play-btn"
+            class="btn play-btn"
+        >
+            <i class="bi bi-play-fill"></i>
+        </button>
+
+
+        <!-- Next -->
+        <button
+            type="button"
+            id="next-btn"
+            class="btn"
+        >
+            <i class="bi bi-skip-end-fill"></i>
+        </button>
+
+    </div>
+
+
+    <!-- Progress -->
+    <div class="player-progress">
+
+        <span id="current-time">0:00</span>
+
+        <input
+            type="range"
+            id="progress-bar"
+            class="form-range"
+            min="0"
+            max="100"
+            value="0"
+        >
+
+        <span id="duration">0:00</span>
+
+    </div>
+<!-- Volume -->
+<div class="player-volume">
+
+    <i class="bi bi-volume-up-fill" id="volume-icon"></i>
+
+    <input
+        type="range"
+        id="volume-bar"
+        class="form-range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1"
+    >
+
+</div>
+</div>
+
+
+<!-- Audio -->
+<audio id="music-player"></audio>
+    </section>
+</main>
+
+   <script>
+
+const musicPlayer = document.getElementById("music-player");
+
+const playBtn = document.getElementById("play-btn");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+
+const progressBar = document.getElementById("progress-bar");
+
+const currentTime = document.getElementById("current-time");
+const duration = document.getElementById("duration");
+
+const playerTitle = document.getElementById("player-title");
+const playerArtist = document.getElementById("player-artist");
+const playerCover = document.getElementById("player-cover");
+
+const songElements = document.querySelectorAll(".song");
+
+const volumeBar = document.getElementById("volume-bar");
+const volumeIcon = document.getElementById("volume-icon");
+
+const heroVinyl = document.getElementById("hero-vinyl");
+
+
+
+
+/* =========================
+   SONG DATA
+========================= */
+
+const songs = [
+
+    {
+        title: "Sonne",
+        artist: "Rammstein",
+        cover: "Image/song1.jpg",
+        audio: "Audio/song1.mp3"
+    },
+
+    {
+        title: "Gui Bian",
+        artist: "Beauty",
+        cover: "Image/song2.jpg",
+        audio: "Audio/song2.m4a"
+    },
+
+    {
+        title: "SPECIALZ",
+        artist: "King Gnu",
+        cover: "Image/song3.jpg",
+        audio: "Audio/song3.mp3"
+    },
+
+    {
+        title: "Kill Em with Kindness",
+        artist: "Selena Gomez",
+        cover: "Image/song4.jpg",
+        audio: "Audio/song4.mp3"
+    },
+    {
+        title: "Drama",
+        artist: "aespa",
+        cover: "Image/song5.jpg",
+        audio: "Audio/song5.mp3"
+    }
+
+];
+
+
+let currentSong = 0;
+
+
+/* =========================
+   LOAD SONG
+========================= */
+
+function loadSong(index) {
+
+    currentSong = index;
+
+    const song = songs[currentSong];
+
+    playerTitle.textContent = song.title;
+
+    playerArtist.textContent = song.artist;
+
+    playerCover.src = song.cover;
+
+    musicPlayer.src = song.audio;
+
+    progressBar.value = 0;
+
+    currentTime.textContent = "0:00";
+
+    duration.textContent = "0:00";
+
+
+    /* Active song */
+
+    songElements.forEach(song => {
+        song.classList.remove("playing");
+    });
+
+    if (songElements[currentSong]) {
+        songElements[currentSong].classList.add("playing");
+    }
+
+}
+
+
+/* =========================
+   PLAY / PAUSE
+========================= */
+
+function togglePlay() {
+
+    if (musicPlayer.paused) {
+
+        musicPlayer.play();
+
+    } else {
+
+        musicPlayer.pause();
+
+    }
+
+}
+
+
+/* =========================
+   PLAY ICON
+========================= */
+
+musicPlayer.addEventListener("play", function () {
+  playBtn.innerHTML = '<i class="bi bi-pause-fill"></i>';
+  heroVinyl.classList.add("playing");
+});
+
+
+musicPlayer.addEventListener("pause", function () {
+  playBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
+  heroVinyl.classList.remove("playing");
+});
+
+
+/* =========================
+   NEXT
+========================= */
+
+function nextSong() {
+
+    currentSong++;
+
+    if (currentSong >= songs.length) {
+        currentSong = 0;
+    }
+
+    loadSong(currentSong);
+
+    musicPlayer.play();
+
+}
+
+
+/* =========================
+   PREVIOUS
+========================= */
+
+function previousSong() {
+
+    currentSong--;
+
+    if (currentSong < 0) {
+        currentSong = songs.length - 1;
+    }
+
+    loadSong(currentSong);
+
+    musicPlayer.play();
+
+}
+
+
+/* =========================
+   CLICK RECENT SONG
+========================= */
+
+songElements.forEach((songElement) => {
+
+    songElement.addEventListener("click", function () {
+
+        const index =
+            Number(this.dataset.song);
+
+        loadSong(index);
+
+        musicPlayer.play();
+
+    });
+
+});
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+musicPlayer.addEventListener("timeupdate", function () {
+
+    if (!musicPlayer.duration) {
+        return;
+    }
+
+    const progress =
+        (musicPlayer.currentTime /
+        musicPlayer.duration) * 100;
+
+    progressBar.value = progress;
+
+    currentTime.textContent =
+        formatTime(musicPlayer.currentTime);
+
+});
+
+
+/* =========================
+   DURATION
+========================= */
+
+musicPlayer.addEventListener(
+    "loadedmetadata",
+    function () {
+
+        duration.textContent =
+            formatTime(musicPlayer.duration);
+
+    }
+);
+
+
+/* =========================
+   CHANGE POSITION
+========================= */
+
+progressBar.addEventListener("input", function () {
+
+    if (!musicPlayer.duration) {
+        return;
+    }
+
+    musicPlayer.currentTime =
+        (progressBar.value / 100) *
+        musicPlayer.duration;
+
+});
+
+/* =========================
+   FORMAT TIME
+========================= */
+
+function formatTime(seconds) {
+
+    if (!Number.isFinite(seconds)) {
+        return "0:00";
+    }
+
+    const minutes =
+        Math.floor(seconds / 60);
+
+    const remainingSeconds =
+        Math.floor(seconds % 60);
+
+    return minutes + ":" +
+        String(remainingSeconds).padStart(2, "0");
+
+}
+
+
+/* =========================
+   BUTTON EVENTS
+========================= */
+
+playBtn.addEventListener(
+    "click",
+    togglePlay
+);
+
+prevBtn.addEventListener(
+    "click",
+    previousSong
+);
+
+nextBtn.addEventListener(
+    "click",
+    nextSong
+);
+
+
+/* =========================
+   VOLUME
+========================= */
+
+volumeBar.addEventListener("input", function () {
+
+    musicPlayer.volume = volumeBar.value;
+
+    if (volumeBar.value == 0) {
+
+        volumeIcon.className =
+            "bi bi-volume-mute-fill";
+
+    } else if (volumeBar.value < 0.5) {
+
+        volumeIcon.className =
+            "bi bi-volume-down-fill";
+
+    } else {
+
+        volumeIcon.className =
+            "bi bi-volume-up-fill";
+
+    }
+
+});
+
+
+/* =========================
+   MUTE
+========================= */
+
+volumeIcon.addEventListener("click", function () {
+
+    if (musicPlayer.muted) {
+
+        musicPlayer.muted = false;
+
+        volumeBar.value = musicPlayer.volume;
+
+        volumeIcon.className =
+            "bi bi-volume-up-fill";
+
+    } else {
+
+        musicPlayer.muted = true;
+
+        volumeBar.value = 0;
+
+        volumeIcon.className =
+            "bi bi-volume-mute-fill";
+
+    }
+
+});
+
+/* =========================
+   AUTO NEXT SONG
+========================= */
+
+musicPlayer.addEventListener(
+    "ended",
+    nextSong
+);
+
+
+/* =========================
+   FIRST SONG
+========================= */
+
+loadSong(0);
+
+
+/* =====================================================
+   DAY / NIGHT MODE
+===================================================== */
+
+const themeButton =
+    document.getElementById(
+        "theme-btn"
+    );
+
+
+const themeIcon =
+    document.getElementById(
+        "theme-icon"
+    );
+
+
+const themeLabel =
+    document.getElementById(
+        "theme-label"
+    );
+
+
+const body =
+    document.body;
+
+
+
+/* =====================================================
+   RESTORE SAVED THEME
+===================================================== */
+
+const savedTheme =
+    localStorage.getItem(
+        "melovia-theme"
+    );
+
+
+if (savedTheme === "day") {
+
+    body.setAttribute(
+        "data-theme",
+        "day"
+    );
+
+
+    themeIcon.textContent =
+        "🌙";
+
+
+    themeLabel.textContent =
+        "Night mode";
+
+}
+
+
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
+
+if (themeButton) {
+
+    themeButton.addEventListener(
+        "click",
+        function () {
+
+
+            const isDay =
+                body.getAttribute(
+                    "data-theme"
+                ) === "day";
+
+
+
+            if (isDay) {
+
+
+                /* =========================================
+                   CHANGE TO NIGHT
+                ========================================== */
+
+                body.removeAttribute(
+                    "data-theme"
+                );
+
+
+                themeIcon.textContent =
+                    "☀️";
+
+
+                themeLabel.textContent =
+                    "Day mode";
+
+
+                localStorage.setItem(
+                    "melovia-theme",
+                    "night"
+                );
+
+
+            }
+
+            else {
+
+
+                /* =========================================
+                   CHANGE TO DAY
+                ========================================== */
+
+                body.setAttribute(
+                    "data-theme",
+                    "day"
+                );
+
+
+                themeIcon.textContent =
+                    "🌙";
+
+
+                themeLabel.textContent =
+                    "Night mode";
+
+
+                localStorage.setItem(
+                    "melovia-theme",
+                    "day"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+</script>
+
 </body>
+
 </html>
