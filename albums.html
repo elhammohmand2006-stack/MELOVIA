@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>MELOVIA</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5 CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="artists_albums.css" />
+</head>
+<body>
+     <input type="checkbox" id="nav-toggle" />
+
+    <label for="nav-toggle" class="nav-label"> ☰ </label>
+
+    <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+    <aside class="sidebar">
+      <!-- Brand -->
+
+      <div class="brand">MELOVIA<span>.</span></div>
+
+      <!-- Navigation -->
+
+      <nav class="nav-links">
+        <a href="index.html"> Home </a>
+
+        <a href="discover.html"> Discover </a>
+
+        <a href="artists.html"> Artists </a>
+
+        <a href="albums.html" class="active"> Albums </a>
+
+        <a href="genres.html"> Genres </a>
+
+        <a href="events.html"> Events </a>
+
+        <a href="contact.html"> Contact </a>
+      </nav>
+
+      <!-- Sign Up -->
+
+      <div class="side-foot">
+        <label for="modal-toggle" class="signup-btn"> Sign Up </label>
+      </div>
+      <button type="button" class="theme-btn" id="theme-btn">
+        <span id="theme-icon"> ☀️ </span>
+
+        <span id="theme-label"> Day mode </span>
+      </button>
+    </aside>
+
+    <main class="page-wrap">
+      <section class="page-head-row">
+        <div>
+          <h1 class="page-title">Albums</h1>
+          <p class="page-subtitle">Browse albums and press play.</p>
+        </div>
+        <a href="artists.html" class="page-link">← Artists</a>
+      </section>
+
+      <!-- Bootstrap grid -->
+      <section class="container-fluid artists-container">
+        <div class="row g-4" id="albumGrid"></div>
+      </section>
+    </main>
+
+
+    <!-- Album modal: opens on card click, holds the song list -->
+    <div
+      class="modal fade"
+      id="albumModal"
+      tabindex="-1"
+      aria-labelledby="amTitle"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg artist-modal-dialog"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-head">
+              <div class="d-photo square">
+                <img id="amCover" src="" alt="" />
+              </div>
+
+              <div class="artist-heading">
+                <div class="d-name" id="amTitle">—</div>
+                <span class="badge genre-badge" id="amMeta">—</span>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <h2 class="songs-title">Songs</h2>
+            <div id="amSongList"></div>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-outline-light" id="prevAlbumBtn">
+              ◀ Previous
+            </button>
+            <button class="btn btn-outline-light" id="nextAlbumBtn">
+              Next ▶
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========footer======= -->
+    <footer class="melovia-footer">
+      <div class="brand2">MELOVIA<span>.</span></div>
+
+      <div class="sf-bottom">
+        <div>© 2026 MELOVIA. All rights reserved.</div>
+        <div class="sf-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </footer>
+
+
+     <!-- =========================
+       SIGN UP MODAL
+  ========================== -->
+
+    <input type="checkbox" id="modal-toggle" />
+
+    <div class="modal-overlay">
+      <div class="modal-box">
+        <!-- Modal Header -->
+
+        <div class="modal-head">
+          <h2>Create Account</h2>
+
+          <label for="modal-toggle" class="modal-close"> ✕ </label>
+        </div>
+
+        <!-- Email -->
+
+        <div class="m-field">
+          <label> Email </label>
+
+          <input type="email" placeholder="you@email.com" />
+        </div>
+
+        <!-- Username -->
+
+        <div class="m-field">
+          <label> Username </label>
+
+          <input type="text" placeholder="Choose a username" />
+        </div>
+
+        <!-- Password -->
+
+        <div class="m-field">
+          <label> Password </label>
+
+          <input type="password" placeholder="••••••••" />
+        </div>
+
+        <!-- Submit -->
+
+        <a href="index.html" class="m-submit"> Submit </a>
+
+        <!-- Note -->
+
+        <div class="m-note">By signing up you agree to our terms.</div>
+      </div>
+    </div>
+
+
+
+    <!-- Light & Dark Mode -->
+    <script>
+      /* =====================================================
+     DAY / NIGHT MODE
+  ===================================================== */
+
+      const themeButton = document.getElementById("theme-btn");
+      const themeIcon = document.getElementById("theme-icon");
+      const themeLabel = document.getElementById("theme-label");
+
+      const html = document.documentElement;
+
+      /* =====================================================
+     LOAD SAVED THEME
+  ===================================================== */
+
+      const savedTheme = localStorage.getItem("melovia-theme");
+
+      if (savedTheme === "dark") {
+        html.classList.add("darkmode");
+
+        themeIcon.textContent = "🌙";
+        themeLabel.textContent = "Day mode";
+      } else {
+        html.classList.remove("darkmode");
+
+        themeIcon.textContent = "🌙";
+        themeLabel.textContent = "Night mode";
+      }
+
+      /* =====================================================
+     THEME BUTTON
+  ===================================================== */
+
+      themeButton.addEventListener("click", function () {
+        const isDarkMode = html.classList.contains("darkmode");
+
+        if (isDarkMode) {
+          /* =========================
+         CHANGE TO LIGHT MODE
+      ========================= */
+
+          html.classList.remove("darkmode");
+
+          themeIcon.textContent = "🌙";
+          themeLabel.textContent = "Night mode";
+
+          localStorage.setItem("melovia-theme", "light");
+        } else {
+          /* =========================
+         CHANGE TO DARK MODE
+      ========================= */
+
+          html.classList.add("darkmode");
+
+          themeIcon.textContent = "☀️";
+          themeLabel.textContent = "Day mode";
+
+          localStorage.setItem("melovia-theme", "dark");
+        }
+      });
+    </script>
+
+    <!-- Bootstrap 5 JS (needed for the modal) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- albums js script -->
+    <script>
+      const albums = [
+        {
+          title: "Thriller",
+          artist: "Michael Jackson",
+          year: "1982",
+          cover: "images/Thriller-album.jpg",
+          songs: [
+            { name: "Beat It ", src: "audio/Beat It   Michael Jackson.mp3" },
+            {
+              name: "Billie Jean",
+              src: "audio/Billie Jean   Michael Jackson.mp3",
+            },
+            { name: "Thriller", src: "audio/Thriller   Michael Jackson.mp3" },
+          ],
+        },
+
+        {
+          title: "21",
+          artist: "Adele",
+          year: "2011",
+          cover: "images/21-album.jpg",
+          songs: [
+            {
+              name: "Rolling in the Deep",
+              src: "audio/Rolling in the Deep   Adele.mp3",
+            },
+            {
+              name: "Someone Like You",
+              src: "audio/Someone Like You   Adele.mp3",
+            },
+            {
+              name: "Set Fire to the Rain",
+              src: "audio/Set Fire to the Rain Adele.m4a",
+            },
+          ],
+        },
+
+        {
+          title: "Mutter",
+          artist: "Rammstien",
+          year: "2001",
+          cover: "images/mutter-album.jpg",
+          songs: [
+            { name: "Sonne", src: "audio/Sonne   Rammstein.mp3" },
+            { name: "Mutter", src: "audio/Mutter   Rammstein.mp3" },
+            { name: "Ich will", src: "audio/Ich will   Rammstein.mp3" },
+          ],
+        },
+
+        {
+          title: "Armageddon",
+          artist: "Aespa",
+          year: "2024",
+          cover: "images/Armageddon-album.jpg",
+          songs: [
+            { name: "Armageddon", src: "audio/Armageddon   aespa.mp3" },
+            { name: "Live My Life", src: "audio/Live My Life aespa.m4a" },
+            { name: "Supernova", src: "audio/Supernova   aespa.mp3" },
+          ],
+        },
+
+        {
+          title: "Ceremony",
+          artist: "King Gnu",
+          year: "2020",
+          cover: "images/Ceremony-album.jpg",
+          songs: [
+            { name: "Hakujitsu", src: "audio/Hakujitsu   King Gnu.mp3" },
+            { name: "Hikoitei", src: "audio/Hikoitei king Gnu.mp3" },
+            {
+              name: "Teenager Forever",
+              src: "audio/Teenager Forever   King Gnu.m4a",
+            },
+          ],
+        },
+
+        {
+          title: "Being Towards Death",
+          artist: "Gui Bian (鬼卞)",
+          year: "2020",
+          cover: "images/Being Towards Death-album.jpg",
+          songs: [
+            { name: "Persona", src: "audio/Gui Bian - Persona.m4a" },
+            {
+              name: "The Death of a Skeptic",
+              src: "audio/Gui Bian - The Death of a Skeptic.mp3",
+            },
+            {
+              name: "The Last Train",
+              src: "audio/Gui Bian - The Last Train.m4a",
+            },
+          ],
+        },
+
+        {
+          title: "Red",
+          artist: "Taylor Swift",
+          year: "2012",
+          cover: "images/Red-album.jpg",
+          songs: [
+            {
+              name: "All Too Well",
+              src: "audio/All Too Well taylor swift.m4a",
+            },
+            {
+              name: "I Knew You Were Trouble",
+              src: "audio/I Knew You Were Trouble.   Taylor Swift.mp3",
+            },
+            {
+              name: "We Are Never Ever Getting Back Together",
+              src: "audio/We Are Never Ever Getting Back Together   Taylor Swift.mp3",
+            },
+          ],
+        },
+
+        {
+          title: "Revival",
+          artist: "Selena Gomez",
+          year: "2015",
+          cover: "images/Revival-album.jpg",
+          songs: [
+            {
+              name: "Hands to Myself",
+              src: "audio/Selena Gomez - Hands to Myself.m4a",
+            },
+            {
+              name: "Good For You",
+              src: "audio/Good For You   Selena Gomez.m4a",
+            },
+            {
+              name: "Kill Em With Kindness",
+              src: "audio/Kill Em With Kindness (Acoustic)   Selena Gomez.m4a",
+            },
+          ],
+        },
+      ];
+
+      /* =========================================================
+   DOM
+   ========================================================= */
+
+      const grid = document.getElementById("albumGrid");
+
+      const albumModalEl = document.getElementById("albumModal");
+      const albumModal = new bootstrap.Modal(albumModalEl);
+
+      const amCover = document.getElementById("amCover");
+      const amTitle = document.getElementById("amTitle");
+      const amMeta = document.getElementById("amMeta");
+      const amSongList = document.getElementById("amSongList");
+
+      const prevAlbumBtn = document.getElementById("prevAlbumBtn");
+      const nextAlbumBtn = document.getElementById("nextAlbumBtn");
+
+      let currentAlbum = 0;
+
+      /* =========================================================
+   ALBUM CARDS
+   ========================================================= */
+
+      function renderGrid() {
+        grid.innerHTML = "";
+
+        albums.forEach((album, index) => {
+          const col = document.createElement("div");
+
+          // Bootstrap 5 responsive columns
+          col.className = "col-12 col-sm-6 col-lg-4 col-xl-3";
+
+          col.innerHTML = `
+      <article class="album-card" data-index="${index}">
+        <div class="album-cover">
+          <img src="${album.cover}" alt="${album.title}">
+        </div>
+
+        <div class="album-info">
+          <h2 class="album-title">${album.title}</h2>
+          <p class="artist-name">${album.artist}</p>
+          <p class="album-details">${album.year}</p>
+        </div>
+      </article>
+    `;
+
+          col.querySelector(".album-card").addEventListener("click", () => {
+            openAlbum(index);
+          });
+
+          grid.appendChild(col);
+        });
+      }
+
+      renderGrid();
+
+      /* =========================================================
+   ALBUM MODAL
+   ========================================================= */
+
+      function openAlbum(index) {
+        currentAlbum = index;
+
+        const album = albums[index];
+
+        amCover.src = album.cover;
+        amCover.alt = album.title;
+        amTitle.textContent = album.title;
+        amMeta.textContent = `${album.artist} • ${album.year}`;
+
+        renderSongs();
+
+        albumModal.show();
+      }
+
+      function renderSongs() {
+        const album = albums[currentAlbum];
+
+        amSongList.innerHTML = "";
+
+        album.songs.forEach((song, index) => {
+          const row = document.createElement("div");
+
+          row.className = "song-audio-row";
+
+          row.innerHTML = `
+      <div class="song-audio-head">
+        <div class="song-num">${String(index + 1).padStart(2, "0")}</div>
+        <div class="song-name">${song.name}</div>
+      </div>
+
+      <audio controls preload="metadata" src="${song.src}"></audio>
+    `;
+
+          amSongList.appendChild(row);
+        });
+      }
+
+      /* Previous album */
+      prevAlbumBtn.addEventListener("click", () => {
+        currentAlbum = (currentAlbum - 1 + albums.length) % albums.length;
+        openAlbum(currentAlbum);
+      });
+
+      /* Next album */
+      nextAlbumBtn.addEventListener("click", () => {
+        currentAlbum = (currentAlbum + 1) % albums.length;
+        openAlbum(currentAlbum);
+      });
+    </script>
+
+
+</body>
+</html>

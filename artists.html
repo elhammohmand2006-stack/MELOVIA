@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>MELOVIA</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5 CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="artists_albums.css" />
+</head>
+<body>
+    <input type="checkbox" id="nav-toggle" />
+
+    <label for="nav-toggle" class="nav-label"> ☰ </label>
+
+    <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+    <aside class="sidebar">
+      <!-- Brand -->
+
+      <div class="brand">MELOVIA<span>.</span></div>
+
+      <!-- Navigation -->
+
+      <nav class="nav-links">
+        <a href="index.html"> Home </a>
+
+        <a href="discover.html"> Discover </a>
+
+        <a href="artists.html" class="active"> Artists </a>
+
+        <a href="albums.html"> Albums </a>
+
+        <a href="genres.html"> Genres </a>
+
+        <a href="events.html"> Events </a>
+
+        <a href="contact.html"> Contact </a>
+      </nav>
+
+      <!-- Sign Up -->
+
+      <div class="side-foot">
+        <label for="modal-toggle" class="signup-btn"> Sign Up </label>
+      </div>
+      <button type="button" class="theme-btn" id="theme-btn">
+        <span id="theme-icon"> ☀️ </span>
+
+        <span id="theme-label"> Day mode </span>
+      </button>
+    </aside>
+    <main class="page-wrap">
+      <section class="page-head-row">
+        <div>
+          <h1 class="page-title">Meet the Artists</h1>
+          <p class="page-subtitle">Choose a genre and discover the artists.</p>
+        </div>
+        <a href="albums.html" class="page-link">Albums →</a>
+      </section>
+
+      <!-- Genre filters -->
+      <section class="filters" id="filters">
+        <button class="pill active" data-genre="all">All</button>
+        <button class="pill" data-genre="pop">Pop</button>
+        <button class="pill" data-genre="rock">Rock</button>
+        <button class="pill" data-genre="rnb">R&amp;B / Soul</button>
+        <button class="pill" data-genre="hiphop">Hip-Hop</button>
+        <button class="pill" data-genre="electronic">Electronic</button>
+        <button class="pill" data-genre="jpop">J-Pop</button>
+        <button class="pill" data-genre="kpop">K-Pop</button>
+        <button class="pill" data-genre="metal">Metal</button>
+      </section>
+
+      <!-- Bootstrap grid -->
+      <section class="container-fluid artists-container">
+        <div class="row g-4" id="artistGrid"></div>
+      </section>
+    </main>
+
+    <!-- Artist modal: opens on card click, holds the song list -->
+    <div
+      class="modal fade"
+      id="artistModal"
+      tabindex="-1"
+      aria-labelledby="dName"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg artist-modal-dialog"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-head">
+              <div class="d-photo">
+                <img id="dImage" src="" alt="" />
+              </div>
+
+              <div class="artist-heading">
+                <div class="d-name" id="dName">—</div>
+                <span class="badge genre-badge" id="dGenre">—</span>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <h2 class="songs-title">Album</h2>
+            <a href="albums.html" class="album-link-card">
+              <div class="album-link-cover">
+                <img id="dAlbumImage" src="" alt="" />
+              </div>
+              <div class="album-link-info">
+                <div class="album-link-title" id="dAlbumTitle">—</div>
+                <div class="album-link-year" id="dAlbumYear">—</div>
+              </div>
+              <span class="album-link-arrow">→</span>
+            </a>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-outline-light" id="prevArtistBtn">
+              ◀ Previous
+            </button>
+            <button class="btn btn-outline-light" id="nextArtistBtn">
+              Next ▶
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========footer======= -->
+    <footer class="melovia-footer">
+      <div class="brand2">MELOVIA<span>.</span></div>
+
+      <div class="sf-bottom">
+        <div>© 2026 MELOVIA. All rights reserved.</div>
+        <div class="sf-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- =========================
+       SIGN UP MODAL
+  ========================== -->
+
+    <input type="checkbox" id="modal-toggle" />
+
+    <div class="modal-overlay">
+      <div class="modal-box">
+        <!-- Modal Header -->
+
+        <div class="modal-head">
+          <h2>Create Account</h2>
+
+          <label for="modal-toggle" class="modal-close"> ✕ </label>
+        </div>
+
+        <!-- Email -->
+
+        <div class="m-field">
+          <label> Email </label>
+
+          <input type="email" placeholder="you@email.com" />
+        </div>
+
+        <!-- Username -->
+
+        <div class="m-field">
+          <label> Username </label>
+
+          <input type="text" placeholder="Choose a username" />
+        </div>
+
+        <!-- Password -->
+
+        <div class="m-field">
+          <label> Password </label>
+
+          <input type="password" placeholder="••••••••" />
+        </div>
+
+        <!-- Submit -->
+
+        <a href="index.html" class="m-submit"> Submit </a>
+
+        <!-- Note -->
+
+        <div class="m-note">By signing up you agree to our terms.</div>
+      </div>
+    </div>
+
+
+    <!-- Light & Dark Mode -->
+    <script>
+      /* =====================================================
+     DAY / NIGHT MODE
+  ===================================================== */
+
+      const themeButton = document.getElementById("theme-btn");
+      const themeIcon = document.getElementById("theme-icon");
+      const themeLabel = document.getElementById("theme-label");
+
+      const html = document.documentElement;
+
+      /* =====================================================
+     LOAD SAVED THEME
+  ===================================================== */
+
+      const savedTheme = localStorage.getItem("melovia-theme");
+
+      if (savedTheme === "dark") {
+        html.classList.add("darkmode");
+
+        themeIcon.textContent = "🌙";
+        themeLabel.textContent = "Day mode";
+      } else {
+        html.classList.remove("darkmode");
+
+        themeIcon.textContent = "🌙";
+        themeLabel.textContent = "Night mode";
+      }
+
+      /* =====================================================
+     THEME BUTTON
+  ===================================================== */
+
+      themeButton.addEventListener("click", function () {
+        const isDarkMode = html.classList.contains("darkmode");
+
+        if (isDarkMode) {
+          /* =========================
+         CHANGE TO LIGHT MODE
+      ========================= */
+
+          html.classList.remove("darkmode");
+
+          themeIcon.textContent = "🌙";
+          themeLabel.textContent = "Night mode";
+
+          localStorage.setItem("melovia-theme", "light");
+        } else {
+          /* =========================
+         CHANGE TO DARK MODE
+      ========================= */
+
+          html.classList.add("darkmode");
+
+          themeIcon.textContent = "☀️";
+          themeLabel.textContent = "Day mode";
+
+          localStorage.setItem("melovia-theme", "dark");
+        }
+      });
+    </script>
+
+    <!-- Bootstrap 5 JS (needed for the modal) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- artists-js script -->
+    <script>
+      const artists = [
+        {
+          name: "Michael Jackson",
+          genre: "pop",
+          image: "images/Michael Jackson.jpg",
+          album: {
+            title: "Thriller",
+            year: "1982",
+            cover: "images/Michael Jackson.jpg",
+          },
+        },
+
+        {
+          name: "Taylor Swift",
+          genre: "rock",
+          image: "images/Taylor Swift.jpg",
+          album: {
+            title: "Red",
+            year: "2012",
+            cover: "images/Taylor Swift.jpg",
+          },
+        },
+
+        {
+          name: "Adele",
+          genre: "rnb",
+          image: "images/Adele.jpg",
+          album: { title: "21", year: "2011", cover: "images/Adele.jpg" },
+        },
+
+        {
+          name: "Gui Bian (鬼卞)",
+          genre: "hiphop",
+          image: "images/Gui Bian (鬼卞).jpg",
+          album: {
+            title: "Being Towards Death",
+            year: "2020",
+            cover: "images/Gui Bian (鬼卞).jpg",
+          },
+        },
+
+        {
+          name: "Selena Gomez",
+          genre: "electronic",
+          image: "images/Selena Gomez.jpg",
+          album: {
+            title: "Revival",
+            year: "2015",
+            cover: "images/Selena Gomez.jpg",
+          },
+        },
+
+        {
+          name: "King Gnu",
+          genre: "jpop",
+          image: "images/King Gnu.jpg",
+          album: {
+            title: "Ceremony",
+            year: "2020",
+            cover: "images/King Gnu.jpg",
+          },
+        },
+
+        {
+          name: "Aespa",
+          genre: "kpop",
+          image: "images/aespa.jpg",
+          album: {
+            title: "Armageddon",
+            year: "2024",
+            cover: "images/aespa.jpg",
+          },
+        },
+
+        {
+          name: "Rammstein",
+          genre: "metal",
+          image: "images/Rammstein.jpeg",
+          album: {
+            title: "Mutter",
+            year: "2001",
+            cover: "images/Rammstein.jpeg",
+          },
+        },
+      ];
+
+      /* Text shown for each genre */
+      const genreLabels = {
+        pop: "Pop",
+        rock: "Rock",
+        rnb: "R&B / Soul",
+        hiphop: "Hip-Hop",
+        electronic: "Electronic",
+        jpop: "J-Pop",
+        kpop: "K-Pop",
+        metal: "Metal",
+      };
+
+      /* =========================================================
+   DOM
+   ========================================================= */
+
+      const grid = document.getElementById("artistGrid");
+
+      const artistModalEl = document.getElementById("artistModal");
+      const artistModal = new bootstrap.Modal(artistModalEl);
+
+      const dName = document.getElementById("dName");
+      const dGenre = document.getElementById("dGenre");
+      const dImage = document.getElementById("dImage");
+      const dAlbumImage = document.getElementById("dAlbumImage");
+      const dAlbumTitle = document.getElementById("dAlbumTitle");
+      const dAlbumYear = document.getElementById("dAlbumYear");
+
+      const prevArtistBtn = document.getElementById("prevArtistBtn");
+      const nextArtistBtn = document.getElementById("nextArtistBtn");
+
+      let currentArtist = 0;
+
+      /* =========================================================
+   ARTIST CARDS
+   ========================================================= */
+
+      function renderGrid(filter = "all") {
+        grid.innerHTML = "";
+
+        artists.forEach((artist, index) => {
+          if (filter !== "all" && artist.genre !== filter) return;
+
+          const col = document.createElement("div");
+
+          // Bootstrap 5 responsive columns
+          col.className = "col-12 col-sm-6 col-lg-4 col-xl-3";
+
+          col.innerHTML = `
+      <article class="artist-card" data-index="${index}">
+        <div class="artist-cover">
+          <img src="${artist.image}" alt="${artist.name}">
+        </div>
+
+        <div class="artist-info">
+          <h3 class="artist-card-name">${artist.name}</h3>
+          <span class="artist-card-genre">${genreLabels[artist.genre]}</span>
+        </div>
+      </article>
+    `;
+
+          col.querySelector(".artist-card").addEventListener("click", () => {
+            openArtist(index);
+          });
+
+          grid.appendChild(col);
+        });
+      }
+
+      /* First load */
+      renderGrid();
+
+      /* =========================================================
+   FILTERS
+   ========================================================= */
+
+      document.querySelectorAll(".pill").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll(".pill").forEach((item) => {
+            item.classList.remove("active");
+          });
+
+          button.classList.add("active");
+
+          renderGrid(button.dataset.genre);
+        });
+      });
+
+      /* =========================================================
+   ARTIST MODAL
+   ========================================================= */
+
+      function openArtist(index) {
+        currentArtist = index;
+
+        const artist = artists[index];
+
+        dName.textContent = artist.name;
+        dGenre.textContent = genreLabels[artist.genre];
+        dImage.src = artist.image;
+        dImage.alt = artist.name;
+
+        dAlbumImage.src = artist.album.cover;
+        dAlbumImage.alt = artist.album.title;
+        dAlbumTitle.textContent = artist.album.title;
+        dAlbumYear.textContent = artist.album.year;
+
+        artistModal.show();
+      }
+
+      /* Previous artist */
+      prevArtistBtn.addEventListener("click", () => {
+        currentArtist = (currentArtist - 1 + artists.length) % artists.length;
+        openArtist(currentArtist);
+      });
+
+      /* Next artist */
+      nextArtistBtn.addEventListener("click", () => {
+        currentArtist = (currentArtist + 1) % artists.length;
+        openArtist(currentArtist);
+      });
+    </script>
+</body>
+</html>
