@@ -74,5 +74,32 @@
         <span id="theme-label"> Day mode </span>
       </button>
     </aside>
+    <main class="page-wrap">
+      <section class="page-head-row">
+        <div>
+          <h1 class="page-title">Meet the Artists</h1>
+          <p class="page-subtitle">Choose a genre and discover the artists.</p>
+        </div>
+        <a href="albums.html" class="page-link">Albums →</a>
+      </section>
+
+      <!-- Genre filters -->
+      <section class="filters" id="filters">
+        <button class="pill active" data-genre="all">All</button>
+        <button class="pill" data-genre="pop">Pop</button>
+        <button class="pill" data-genre="rock">Rock</button>
+        <button class="pill" data-genre="rnb">R&amp;B / Soul</button>
+        <button class="pill" data-genre="hiphop">Hip-Hop</button>
+        <button class="pill" data-genre="electronic">Electronic</button>
+        <button class="pill" data-genre="jpop">J-Pop</button>
+        <button class="pill" data-genre="kpop">K-Pop</button>
+        <button class="pill" data-genre="metal">Metal</button>
+      </section>
+
+      <!-- Bootstrap grid -->
+      <section class="container-fluid artists-container">
+        <div class="row g-4" id="artistGrid"></div>
+      </section>
+    </main>
 </body>
 </html>
