@@ -44,9 +44,9 @@
       <!-- Navigation -->
 
       <nav class="nav-links">
-        <a href="index.html" class="active"> Home </a>
+        <a href="index.html"> Home </a>
 
-        <a href="discover.html"> Discover </a>
+        <a href="discover.html" class="active"> Discover </a>
 
         <a href="artists.html"> Artists </a>
 
@@ -64,6 +64,11 @@
       <div class="side-foot">
         <label for="modal-toggle" class="signup-btn"> Sign Up </label>
       </div>
+      <button type="button" class="theme-btn" id="theme-btn">
+        <span id="theme-icon"> ☀️ </span>
+
+        <span id="theme-label"> Day mode </span>
+      </button>
     </aside>
 
     <main>
@@ -140,7 +145,7 @@
         <a class="card" href="albums.html">
           <div class="cover b3"><img src="images/Ceremony-album.jpg" alt=""></div>
           <div class="name">Ceremony</div>
-          <div class="sub">202</div>
+          <div class="sub">2020</div>
         </a>
         <a class="card" href="albums.html">
           <div class="cover b4"><img src="images/Revival-album.jpg" alt=""></div>
@@ -185,7 +190,7 @@
         <a class="card" href="albums.html">
           <div class="cover b3"><img src="images/Ceremony-album.jpg" alt=""></div>
           <div class="name">Ceremony</div>
-          <div class="sub">202</div>
+          <div class="sub">2020</div>
         </a>
         <a class="card" href="albums.html">
           <div class="cover b4"><img src="images/Revival-album.jpg" alt=""></div>
@@ -326,5 +331,69 @@
       </div>
     </div>
 
+
+
+    <!-- Light & Dark Mode -->
+    <script>
+      /* =====================================================
+     DAY / NIGHT MODE
+  ===================================================== */
+
+      const themeButton = document.getElementById("theme-btn");
+      const themeIcon = document.getElementById("theme-icon");
+      const themeLabel = document.getElementById("theme-label");
+
+      const html = document.documentElement;
+
+      /* =====================================================
+     LOAD SAVED THEME
+  ===================================================== */
+
+      const savedTheme = localStorage.getItem("melovia-theme");
+
+      if (savedTheme === "dark") {
+        html.classList.add("darkmode");
+
+        themeIcon.textContent = "🌙";
+        themeLabel.textContent = "Day mode";
+      } else {
+        html.classList.remove("darkmode");
+
+        themeIcon.textContent = "🌙";
+        themeLabel.textContent = "Night mode";
+      }
+
+      /* =====================================================
+     THEME BUTTON
+  ===================================================== */
+
+      themeButton.addEventListener("click", function () {
+        const isDarkMode = html.classList.contains("darkmode");
+
+        if (isDarkMode) {
+          /* =========================
+         CHANGE TO LIGHT MODE
+      ========================= */
+
+          html.classList.remove("darkmode");
+
+          themeIcon.textContent = "🌙";
+          themeLabel.textContent = "Night mode";
+
+          localStorage.setItem("melovia-theme", "light");
+        } else {
+          /* =========================
+         CHANGE TO DARK MODE
+      ========================= */
+
+          html.classList.add("darkmode");
+
+          themeIcon.textContent = "☀️";
+          themeLabel.textContent = "Day mode";
+
+          localStorage.setItem("melovia-theme", "dark");
+        }
+      });
+    </script>
 </body>
 </html>
