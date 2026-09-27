@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MELOVIA | Events</title>
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+    <link rel="stylesheet" href="events.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         MOBILE NAVIGATION
+    ====================================================== -->
+
+    <input
+        type="checkbox"
+        id="nav-toggle"
+    >
+
+    <label
+        for="nav-toggle"
+        class="nav-label"
+    >
+        ☰
+    </label>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- Logo -->
+
+        <div class="brand">
+
+            MELO<span>VIA</span>
+
+        </div>
+
+
+
+        <!-- Navigation -->
+
+        <nav class="nav-links">
+
+            <a href="home.html">
+                Home
+            </a>
+
+            <a href="discover.html">
+                Discover
+            </a>
+
+            <a href="artists.html"> Artists </a>
+
+        <a href="albums.html"> Albums </a>
+
+            <a
+                href="events.html"
+                class="active"
+            >
+                Events
+            </a>
+
+            <a href="genres.html">
+                Genres
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+        </nav>
+
+
+
+        <!-- Sidebar Bottom -->
+
+        <div class="side-foot">
+
+
+            <!-- Sign Up -->
+
+            <label
+                for="modal-toggle"
+                class="signup-btn"
+            >
+                Sign Up
+            </label>
+
+
+
+            <!-- Theme -->
+
+            <button
+                type="button"
+                class="theme-btn"
+                id="theme-btn"
+            >
+
+                <span id="theme-icon">
+                    ☀️
+                </span>
+
+                <span id="theme-label">
+                    Day mode
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="main">
+
+
+        <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
+
+        <header class="main-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    LIVE MUSIC
+                </p>
+
+                <h1>
+                    Events
+                </h1>
+
+            </div>
+
+
+            <p class="header-description">
+
+                Discover concerts, festivals and unforgettable
+                live music experiences.
+
+            </p>
+
+        </header>
+
+
+
+        <!-- =================================================
+             HERO EVENT
+        ================================================== -->
+
+        <section
+            class="hero-event"
+            data-date="2026-11-02T21:00:00"
+        >
+
+
+            <!-- Concert Image -->
+
+            <div class="hero-image">
+
+                <img
+                    src="images/concert.jpg"
+                    alt="Live concert performance"
+                >
+
+                <div class="image-overlay"></div>
+
+            </div>
+
+
+
+            <!-- Hero Content -->
+
+            <div class="hero-content">
+
+
+                <p class="hero-tag">
+                    NEXT UP
+                </p>
+
+
+                <h2>
+                    Neon Nights Tour
+                </h2>
+
+
+                <p class="hero-meta">
+                    Berlin · Astra Kulturhaus · 9:00 PM
+                </p>
+
+
+
+                <!-- Countdown -->
+
+                <div class="countdown">
+
+
+                    <div class="countdown-block">
+
+                        <span class="c-days">
+                            00
+                        </span>
+
+                        <small>
+                            Days
+                        </small>
+
+                    </div>
+
+
+
+                    <div class="countdown-block">
+
+                        <span class="c-hours">
+                            00
+                        </span>
+
+                        <small>
+                            Hours
+                        </small>
+
+                    </div>
+
+
+
+                    <div class="countdown-block">
+
+                        <span class="c-minutes">
+                            00
+                        </span>
+
+                        <small>
+                            Minutes
+                        </small>
+
+                    </div>
+
+
+
+                    <div class="countdown-block">
+
+                        <span class="c-seconds">
+                            00
+                        </span>
+
+                        <small>
+                            Seconds
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Ticket -->
+
+                <button
+                    type="button"
+                    class="btn-tickets"
+                >
+                    Get Tickets
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             UPCOMING EVENTS
+        ================================================== -->
+
+        <section class="upcoming">
+
+
+            <div class="section-title">
+
+                <p class="eyebrow">
+                    DON'T MISS OUT
+                </p>
+
+                <h2>
+                    Upcoming Events
+                </h2>
+
+            </div>
+
+
+
+            <!-- Event List -->
+
+            <div class="event-list">
+
+
+
+                <!-- EVENT 1 -->
+
+                <article
+                    class="event-row"
+                    data-date="2026-11-08T20:00:00"
+                >
+
+                    <div class="event-date">
+
+                        <span class="day">
+                            08
+                        </span>
+
+                        <span class="mon">
+                            NOV
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-info">
+
+                        <h3>
+                            Red Moon Festival
+                        </h3>
+
+                        <p>
+                            London · O2 Academy
+                        </p>
+
+                    </div>
+
+
+                    <div class="mini-countdown">
+
+                        Loading...
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn-tickets small"
+                    >
+                        Tickets
+                    </button>
+
+                </article>
+
+
+
+                <!-- EVENT 2 -->
+
+                <article
+                    class="event-row"
+                    data-date="2026-11-15T21:30:00"
+                >
+
+                    <div class="event-date">
+
+                        <span class="day">
+                            15
+                        </span>
+
+                        <span class="mon">
+                            NOV
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-info">
+
+                        <h3>
+                            Midnight Echo
+                        </h3>
+
+                        <p>
+                            Paris · Le Trianon
+                        </p>
+
+                    </div>
+
+
+                    <div class="mini-countdown">
+
+                        Loading...
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn-tickets small"
+                    >
+                        Tickets
+                    </button>
+
+                </article>
+
+
+
+                <!-- EVENT 3 -->
+
+                <article
+                    class="event-row"
+                    data-date="2026-11-22T20:30:00"
+                >
+
+                    <div class="event-date">
+
+                        <span class="day">
+                            22
+                        </span>
+
+                        <span class="mon">
+                            NOV
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-info">
+
+                        <h3>
+                            Electric Dreams
+                        </h3>
+
+                        <p>
+                            Amsterdam · Paradiso
+                        </p>
+
+                    </div>
+
+
+                    <div class="mini-countdown">
+
+                        Loading...
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn-tickets small"
+                    >
+                        Tickets
+                    </button>
+
+                </article>
+
+
+
+                <!-- EVENT 4 -->
+
+                <article
+                    class="event-row"
+                    data-date="2026-11-29T19:30:00"
+                >
+
+                    <div class="event-date">
+
+                        <span class="day">
+                            29
+                        </span>
+
+                        <span class="mon">
+                            NOV
+                        </span>
+
+                    </div>
+
+
+                    <div class="event-info">
+
+                        <h3>
+                            Soundwave Live
+                        </h3>
+
+                        <p>
+                            Copenhagen · Vega
+                        </p>
+
+                    </div>
+
+
+                    <div class="mini-countdown">
+
+                        Loading...
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn-tickets small"
+                    >
+                        Tickets
+                    </button>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="melovia-footer">
+
+
+        <div class="brand2">
+
+            MELO<span>VIA</span>
+
+        </div>
+
+
+        <div class="sf-bottom">
+
+            <p>
+                © 2026 MELOVIA. All rights reserved.
+            </p>
+
+
+            <div class="sf-legal">
+
+                <a href="#">
+                    Privacy
+                </a>
+
+                <a href="#">
+                    Terms
+                </a>
+
+                <a href="#">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         SIGN UP MODAL
+    ====================================================== -->
+
+    <input
+        type="checkbox"
+        id="modal-toggle"
+    >
+
+
+    <div class="modal-overlay">
+
+
+        <div class="modal-box">
+
+
+            <div class="modal-head">
+
+                <h2>
+                    Create Account
+                </h2>
+
+
+                <label
+                    for="modal-toggle"
+                    class="modal-close"
+                >
+                    ✕
+                </label>
+
+            </div>
+
+
+
+            <div class="m-field">
+
+                <label>
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Your name"
+                >
+
+            </div>
+
+
+
+            <div class="m-field">
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    placeholder="you@example.com"
+                >
+
+            </div>
+
+
+
+            <div class="m-field">
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    placeholder="Create a password"
+                >
+
+            </div>
+
+
+
+            <a
+                href="#"
+                class="m-submit"
+            >
+                Create Account
+            </a>
+
+
+
+            <p class="m-note">
+
+                Join MELOVIA and discover your next
+                favorite song.
+
+            </p>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
