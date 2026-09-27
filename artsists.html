@@ -223,5 +223,283 @@
         <div class="m-note">By signing up you agree to our terms.</div>
       </div>
     </div>
+
+
+    <!-- Light & Dark Mode -->
+    <script>
+      /* =====================================================
+     DAY / NIGHT MODE
+  ===================================================== */
+
+      const themeButton = document.getElementById("theme-btn");
+      const themeIcon = document.getElementById("theme-icon");
+      const themeLabel = document.getElementById("theme-label");
+
+      const html = document.documentElement;
+
+      /* =====================================================
+     LOAD SAVED THEME
+  ===================================================== */
+
+      const savedTheme = localStorage.getItem("melovia-theme");
+
+      if (savedTheme === "dark") {
+        html.classList.add("darkmode");
+
+        themeIcon.textContent = "🌙";
+        themeLabel.textContent = "Day mode";
+      } else {
+        html.classList.remove("darkmode");
+
+        themeIcon.textContent = "🌙";
+        themeLabel.textContent = "Night mode";
+      }
+
+      /* =====================================================
+     THEME BUTTON
+  ===================================================== */
+
+      themeButton.addEventListener("click", function () {
+        const isDarkMode = html.classList.contains("darkmode");
+
+        if (isDarkMode) {
+          /* =========================
+         CHANGE TO LIGHT MODE
+      ========================= */
+
+          html.classList.remove("darkmode");
+
+          themeIcon.textContent = "🌙";
+          themeLabel.textContent = "Night mode";
+
+          localStorage.setItem("melovia-theme", "light");
+        } else {
+          /* =========================
+         CHANGE TO DARK MODE
+      ========================= */
+
+          html.classList.add("darkmode");
+
+          themeIcon.textContent = "☀️";
+          themeLabel.textContent = "Day mode";
+
+          localStorage.setItem("melovia-theme", "dark");
+        }
+      });
+    </script>
+
+    <!-- Bootstrap 5 JS (needed for the modal) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- artists-js script -->
+    <script>
+      const artists = [
+        {
+          name: "Michael Jackson",
+          genre: "pop",
+          image: "images/Michael Jackson.jpg",
+          album: {
+            title: "Thriller",
+            year: "1982",
+            cover: "images/Michael Jackson.jpg",
+          },
+        },
+
+        {
+          name: "Taylor Swift",
+          genre: "rock",
+          image: "images/Taylor Swift.jpg",
+          album: {
+            title: "Red",
+            year: "2012",
+            cover: "images/Taylor Swift.jpg",
+          },
+        },
+
+        {
+          name: "Adele",
+          genre: "rnb",
+          image: "images/Adele.jpg",
+          album: { title: "21", year: "2011", cover: "images/Adele.jpg" },
+        },
+
+        {
+          name: "Gui Bian (鬼卞)",
+          genre: "hiphop",
+          image: "images/Gui Bian (鬼卞).jpg",
+          album: {
+            title: "Being Towards Death",
+            year: "2020",
+            cover: "images/Gui Bian (鬼卞).jpg",
+          },
+        },
+
+        {
+          name: "Selena Gomez",
+          genre: "electronic",
+          image: "images/Selena Gomez.jpg",
+          album: {
+            title: "Revival",
+            year: "2015",
+            cover: "images/Selena Gomez.jpg",
+          },
+        },
+
+        {
+          name: "King Gnu",
+          genre: "jpop",
+          image: "images/King Gnu.jpg",
+          album: {
+            title: "Ceremony",
+            year: "2020",
+            cover: "images/King Gnu.jpg",
+          },
+        },
+
+        {
+          name: "Aespa",
+          genre: "kpop",
+          image: "images/aespa.jpg",
+          album: {
+            title: "Armageddon",
+            year: "2024",
+            cover: "images/aespa.jpg",
+          },
+        },
+
+        {
+          name: "Rammstein",
+          genre: "metal",
+          image: "images/Rammstein.jpeg",
+          album: {
+            title: "Mutter",
+            year: "2001",
+            cover: "images/Rammstein.jpeg",
+          },
+        },
+      ];
+
+      /* Text shown for each genre */
+      const genreLabels = {
+        pop: "Pop",
+        rock: "Rock",
+        rnb: "R&B / Soul",
+        hiphop: "Hip-Hop",
+        electronic: "Electronic",
+        jpop: "J-Pop",
+        kpop: "K-Pop",
+        metal: "Metal",
+      };
+
+      /* =========================================================
+   DOM
+   ========================================================= */
+
+      const grid = document.getElementById("artistGrid");
+
+      const artistModalEl = document.getElementById("artistModal");
+      const artistModal = new bootstrap.Modal(artistModalEl);
+
+      const dName = document.getElementById("dName");
+      const dGenre = document.getElementById("dGenre");
+      const dImage = document.getElementById("dImage");
+      const dAlbumImage = document.getElementById("dAlbumImage");
+      const dAlbumTitle = document.getElementById("dAlbumTitle");
+      const dAlbumYear = document.getElementById("dAlbumYear");
+
+      const prevArtistBtn = document.getElementById("prevArtistBtn");
+      const nextArtistBtn = document.getElementById("nextArtistBtn");
+
+      let currentArtist = 0;
+
+      /* =========================================================
+   ARTIST CARDS
+   ========================================================= */
+
+      function renderGrid(filter = "all") {
+        grid.innerHTML = "";
+
+        artists.forEach((artist, index) => {
+          if (filter !== "all" && artist.genre !== filter) return;
+
+          const col = document.createElement("div");
+
+          // Bootstrap 5 responsive columns
+          col.className = "col-12 col-sm-6 col-lg-4 col-xl-3";
+
+          col.innerHTML = `
+      <article class="artist-card" data-index="${index}">
+        <div class="artist-cover">
+          <img src="${artist.image}" alt="${artist.name}">
+        </div>
+
+        <div class="artist-info">
+          <h3 class="artist-card-name">${artist.name}</h3>
+          <span class="artist-card-genre">${genreLabels[artist.genre]}</span>
+        </div>
+      </article>
+    `;
+
+          col.querySelector(".artist-card").addEventListener("click", () => {
+            openArtist(index);
+          });
+
+          grid.appendChild(col);
+        });
+      }
+
+      /* First load */
+      renderGrid();
+
+      /* =========================================================
+   FILTERS
+   ========================================================= */
+
+      document.querySelectorAll(".pill").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll(".pill").forEach((item) => {
+            item.classList.remove("active");
+          });
+
+          button.classList.add("active");
+
+          renderGrid(button.dataset.genre);
+        });
+      });
+
+      /* =========================================================
+   ARTIST MODAL
+   ========================================================= */
+
+      function openArtist(index) {
+        currentArtist = index;
+
+        const artist = artists[index];
+
+        dName.textContent = artist.name;
+        dGenre.textContent = genreLabels[artist.genre];
+        dImage.src = artist.image;
+        dImage.alt = artist.name;
+
+        dAlbumImage.src = artist.album.cover;
+        dAlbumImage.alt = artist.album.title;
+        dAlbumTitle.textContent = artist.album.title;
+        dAlbumYear.textContent = artist.album.year;
+
+        artistModal.show();
+      }
+
+      /* Previous artist */
+      prevArtistBtn.addEventListener("click", () => {
+        currentArtist = (currentArtist - 1 + artists.length) % artists.length;
+        openArtist(currentArtist);
+      });
+
+      /* Next artist */
+      nextArtistBtn.addEventListener("click", () => {
+        currentArtist = (currentArtist + 1) % artists.length;
+        openArtist(currentArtist);
+      });
+    </script>
 </body>
 </html>
