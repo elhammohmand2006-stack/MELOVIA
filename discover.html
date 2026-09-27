@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>MELOVIA</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="discover.css">
+
+
+</head>
+<body>
+    <input type="checkbox" id="nav-toggle" />
+
+    <label for="nav-toggle" class="nav-label"> ☰ </label>
+
+    <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+    <aside class="sidebar">
+      <!-- Brand -->
+
+      <div class="brand">MELOVIA<span>.</span></div>
+
+      <!-- Navigation -->
+
+      <nav class="nav-links">
+        <a href="index.html"> Home </a>
+
+        <a href="discover.html" class="active"> Discover </a>
+
+        <a href="artists.html"> Artists </a>
+
+        <a href="albums.html"> Albums </a>
+
+        <a href="genres.html"> Genres </a>
+
+        <a href="events.html"> Events </a>
+
+        <a href="contact.html"> Contact </a>
+      </nav>
+
+      <!-- Sign Up -->
+
+      <div class="side-foot">
+        <label for="modal-toggle" class="signup-btn"> Sign Up </label>
+      </div>
+      <button type="button" class="theme-btn" id="theme-btn">
+        <span id="theme-icon"> ☀️ </span>
+
+        <span id="theme-label"> Day mode </span>
+      </button>
+    </aside>
+
+    <main>
+    <div class="page-wrap">
+    <section>
+      <div class="page-head">
+        <h1>Discover Your Sound</h1>
+        <p>Browse albums and artists — or filter songs by mood below.</p>
+      </div>
+
+  
+
+      <input type="radio" name="filt" id="f1" checked>
+      <input type="radio" name="filt" id="f2">
+      <input type="radio" name="filt" id="f3">
+      <div class="tabs">
+        <label for="f1">All</label>
+        <label for="f2">Album</label>
+        <label for="f3">Artist</label>
+      </div>
+
+      <!-- ALL — 8 albums + 8 artists = 16 items -->
+      <div class="panel p1 grid4">
+        <a class="card" href="artists.html">
+          <div class="cover c1"><img src="images/Adele.jpg" alt=""></div>
+          <div class="name">Adele</div>
+          <div class="sub">21</div>
+        </a>
+        <a class="card" href="artists.html">
+          <div class="cover c2"><img src="images/Selena Gomez.jpg" alt=""></div>
+          <div class="name">Selena Gomez</div>
+          <div class="sub">Revival</div>
+        </a>
+        <a class="card" href="artists.html">
+          <div class="cover c3"><img src="images/Taylor Swift.jpg" alt=""></div>
+          <div class="name">Taylor swift</div>
+          <div class="sub">Red</div>
+        </a>
+        <a class="card" href="artists.html">
+          <div class="cover c4"><img src="images/Rammstein.jpeg" alt=""></div>
+          <div class="name">Rammstein</div>
+          <div class="sub">Mutter</div>
+        </a>
+        <a class="card" href="artists.html">
+          <div class="cover c5"><img src="images/Michael Jackson.jpg" alt=""></div>
+          <div class="name">Michael Jackson</div>
+          <div class="sub">Thriller</div>
+        </a>
+        <a class="card" href="artists.html">
+          <div class="cover c6"><img src="images/Gui Bian (鬼卞).jpg" alt=""></div>
+          <div class="name">Gui Bian (鬼卞)</div>
+          <div class="sub">Being Towards Death</div>
+        </a>
+        <a class="card" href="artists.html">
+          <div class="cover c7"><img src="images/King Gnu.jpg" alt=""></div>
+          <div class="name">king Gnu</div>
+          <div class="sub">Ceremony</div>
+        </a>
+        <a class="card" href="artists.html">
+          <div class="cover c8"><img src="images/aespa.jpg" alt=""></div>
+          <div class="name">Asepa</div>
+          <div class="sub">Armageddon</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b1"><img src="images/Armageddon-album.jpg" alt=""></div>
+          <div class="name">Armageddon</div>
+          <div class="sub">2024</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b2"><img src="images/Armageddon-album.jpg" alt=""></div>
+          <div class="name">Mutter</div>
+          <div class="sub">2001</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b3"><img src="images/Ceremony-album.jpg" alt=""></div>
+          <div class="name">Ceremony</div>
+          <div class="sub">2020</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b4"><img src="images/Revival-album.jpg" alt=""></div>
+          <div class="name">Revival</div>
+          <div class="sub">2015</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b5"><img src="images/Being Towards Death-album.jpg" alt=""></div>
+          <div class="name">Being Towards Death</div>
+          <div class="sub">2020</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b6"><img src="images/21-album.jpg" alt=""></div>
+          <div class="name">21</div>
+          <div class="sub">2011</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b7"><img src="images/Red-album.jpg" alt=""></div>
+          <div class="name">Red</div>
+          <div class="sub">2012</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b8"><img src="images/Thriller-album.jpg" alt=""></div>
+          <div class="name">Thriller</div>
+          <div class="sub">1982</div>
+        </a>
+      </div>
+
+
+       <!-- ALBUM — 8 albums only -->
+      <div class="panel p2 grid4">
+        <a class="card" href="albums.html">
+          <div class="cover b1"><img src="images/Armageddon-album.jpg" alt=""></div>
+          <div class="name">Armageddon</div>
+          <div class="sub">2024</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b2"><img src="images/Armageddon-album.jpg" alt=""></div>
+          <div class="name">Mutter</div>
+          <div class="sub">2001</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b3"><img src="images/Ceremony-album.jpg" alt=""></div>
+          <div class="name">Ceremony</div>
+          <div class="sub">2020</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b4"><img src="images/Revival-album.jpg" alt=""></div>
+          <div class="name">Revival</div>
+          <div class="sub">2015</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b5"><img src="images/Being Towards Death-album.jpg" alt=""></div>
+          <div class="name">Being Towards Death</div>
+          <div class="sub">2020</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b6"><img src="images/21-album.jpg" alt=""></div>
+          <div class="name">21</div>
+          <div class="sub">2011</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b7"><img src="images/Red-album.jpg" alt=""></div>
+          <div class="name">Red</div>
+          <div class="sub">2012</div>
+        </a>
+        <a class="card" href="albums.html">
+          <div class="cover b8"><img src="images/Thriller-album.jpg" alt=""></div>
+          <div class="name">Thriller</div>
+          <div class="sub">1982</div>
+        </a>
+      </div>
+
+
+      <!-- ARTIST — 8 artists only -->
+      <div class="panel p3 grid4">
+        <a class="card" href="artists.html">
+          <div class="cover c1"><img src="images/Adele.jpg" alt=""></div>
+          <div class="name">Adele</div>
+          <div class="sub">21</div>
+        </a>
+        <a class="card" href="artists.html">
+          <div class="cover c2"><img src="images/Selena Gomez.jpg" alt=""></div>
+          <div class="name">Selena Gomez</div>
+          <div class="sub">Revival</div>
+        </a>
+        <a class="card" href="artists.html">
+          <div class="cover c3"><img src="images/Taylor Swift.jpg" alt=""></div>
+          <div class="name">Taylor swift</div>
+          <div class="sub">Red</div>
+        </a>
+        <a class="card" href="artists.html">
+          <div class="cover c4"><img src="images/Rammstein.jpeg" alt=""></div>
+          <div class="name">Rammstein</div>
+          <div class="sub">Mutter</div>
+        </a>
+        <a class="card" href="artists.html">
+          <div class="cover c5"><img src="images/Michael Jackson.jpg" alt=""></div>
+          <div class="name">Michael Jackson</div>
+          <div class="sub">Thriller</div>
+        </a>
+        <a class="card" href="artists.html">
+          <div class="cover c6"><img src="images/Gui Bian (鬼卞).jpg" alt=""></div>
+          <div class="name">Gui Bian (鬼卞)</div>
+          <div class="sub">Being Towards Death</div>
+        </a>
+        <a class="card" href="artists.html">
+          <div class="cover c7"><img src="images/King Gnu.jpg" alt=""></div>
+          <div class="name">king Gnu</div>
+          <div class="sub">Ceremony</div>
+        </a>
+        <a class="card" href="artists.html">
+          <div class="cover c8"><img src="images/aespa.jpg" alt=""></div>
+          <div class="name">Asepa</div>
+          <div class="sub">Armageddon</div>
+        </a>
+      </div>
+    </section>
+    </div>
+    </main>
+
+    <!-- ========footer======= -->
+    <footer class="melovia-footer">
+      <div class="brand2">MELOVIA<span>.</span></div>
+
+      <div class="sf-bottom">
+        <div>© 2026 MELOVIA. All rights reserved.</div>
+        <div class="sf-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </footer>
+
+     <!-- =========================
+       SIGN UP MODAL
+  ========================== -->
+
+    <input type="checkbox" id="modal-toggle" />
+
+    <div class="modal-overlay">
+      <div class="modal-box">
+        <!-- Modal Header -->
+
+        <div class="modal-head">
+          <h2>Create Account</h2>
+
+          <label for="modal-toggle" class="modal-close"> ✕ </label>
+        </div>
+
+        <!-- Email -->
+
+        <div class="m-field">
+          <label> Email </label>
+
+          <input type="email" placeholder="you@email.com" />
+        </div>
+
+        <!-- Username -->
+
+        <div class="m-field">
+          <label> Username </label>
+
+          <input type="text" placeholder="Choose a username" />
+        </div>
+
+        <!-- Password -->
+
+        <div class="m-field">
+          <label> Password </label>
+
+          <input type="password" placeholder="••••••••" />
+        </div>
+
+        <!-- Submit -->
+
+        <a href="index.html" class="m-submit"> Submit </a>
+
+        <!-- Note -->
+
+        <div class="m-note">By signing up you agree to our terms.</div>
+      </div>
+    </div>
+
+
+
+    <!-- Light & Dark Mode -->
+    <script>
+      /* =====================================================
+     DAY / NIGHT MODE
+  ===================================================== */
+
+      const themeButton = document.getElementById("theme-btn");
+      const themeIcon = document.getElementById("theme-icon");
+      const themeLabel = document.getElementById("theme-label");
+
+      const html = document.documentElement;
+
+      /* =====================================================
+     LOAD SAVED THEME
+  ===================================================== */
+
+      const savedTheme = localStorage.getItem("melovia-theme");
+
+      if (savedTheme === "dark") {
+        html.classList.add("darkmode");
+
+        themeIcon.textContent = "🌙";
+        themeLabel.textContent = "Day mode";
+      } else {
+        html.classList.remove("darkmode");
+
+        themeIcon.textContent = "🌙";
+        themeLabel.textContent = "Night mode";
+      }
+
+      /* =====================================================
+     THEME BUTTON
+  ===================================================== */
+
+      themeButton.addEventListener("click", function () {
+        const isDarkMode = html.classList.contains("darkmode");
+
+        if (isDarkMode) {
+          /* =========================
+         CHANGE TO LIGHT MODE
+      ========================= */
+
+          html.classList.remove("darkmode");
+
+          themeIcon.textContent = "🌙";
+          themeLabel.textContent = "Night mode";
+
+          localStorage.setItem("melovia-theme", "light");
+        } else {
+          /* =========================
+         CHANGE TO DARK MODE
+      ========================= */
+
+          html.classList.add("darkmode");
+
+          themeIcon.textContent = "☀️";
+          themeLabel.textContent = "Day mode";
+
+          localStorage.setItem("melovia-theme", "dark");
+        }
+      });
+    </script>
+</body>
+</html>
