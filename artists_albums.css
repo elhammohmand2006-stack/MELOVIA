@@ -734,3 +734,196 @@ button {
   background: linear-gradient(120deg, var(--red), var(--dark-red));
   color: var(--white);
 }
+
+
+/* =========================
+   Artists
+   ========================= */
+
+.artists-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.artist-card,
+.album-card {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+  animation: cardShow 0.7s ease both;
+}
+
+.artist-card:hover,
+.album-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--red);
+  box-shadow:
+    0 15px 35px rgba(179, 38, 26, 0.3),
+    0 0 20px rgba(179, 38, 26, 0.12);
+}
+
+/* Cover image */
+
+.artist-cover,
+.album-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--red), var(--dark-red));
+}
+
+.artist-cover img,
+.album-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition:
+    transform 0.7s ease,
+    filter 0.5s ease;
+}
+
+.artist-card:hover .artist-cover img,
+.album-card:hover .album-cover img {
+  transform: scale(1.1);
+  filter: brightness(0.65);
+}
+
+/* Diagonal light-sweep on hover */
+
+.artist-cover::after,
+.album-cover::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 60%;
+  height: 300%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: rotate(25deg);
+  transition: left 0.8s ease;
+  pointer-events: none;
+}
+
+.artist-card:hover .artist-cover::after,
+.album-card:hover .album-cover::after {
+  left: 140%;
+}
+
+/* Info below the cover */
+
+.artist-info,
+.album-info {
+  padding: 16px 18px 20px;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.artist-card:hover .artist-info,
+.album-card:hover .album-info {
+  transform: translateY(-3px);
+}
+
+.artist-card-name,
+.album-title {
+  margin: 0 0 6px;
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.artist-card:hover .artist-card-name,
+.album-card:hover .album-title {
+  transform: translateX(3px);
+}
+
+.artist-card-genre,
+.artist-name,
+.album-details {
+  display: block;
+  margin: 0 0 2px;
+  color: var(--gray);
+  font-size: 0.82rem;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.artist-card:hover .artist-card-genre,
+.album-card:hover .artist-name,
+.album-card:hover .album-details {
+  color: #ff8a7a;
+  transform: translateX(3px);
+}
+
+/* Entrance animation, staggered per card */
+
+@keyframes cardShow {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.col:nth-child(1) .artist-card,
+.col:nth-child(1) .album-card {
+  animation-delay: 0.05s;
+}
+
+.col:nth-child(2) .artist-card,
+.col:nth-child(2) .album-card {
+  animation-delay: 0.1s;
+}
+
+.col:nth-child(3) .artist-card,
+.col:nth-child(3) .album-card {
+  animation-delay: 0.15s;
+}
+
+.col:nth-child(4) .artist-card,
+.col:nth-child(4) .album-card {
+  animation-delay: 0.2s;
+}
+
+.col:nth-child(5) .artist-card,
+.col:nth-child(5) .album-card {
+  animation-delay: 0.25s;
+}
+
+.col:nth-child(6) .artist-card,
+.col:nth-child(6) .album-card {
+  animation-delay: 0.3s;
+}
+
+.col:nth-child(7) .artist-card,
+.col:nth-child(7) .album-card {
+  animation-delay: 0.35s;
+}
+
+.col:nth-child(8) .artist-card,
+.col:nth-child(8) .album-card {
+  animation-delay: 0.4s;
+}
