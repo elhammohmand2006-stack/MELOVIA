@@ -601,3 +601,136 @@ footer.melovia-footer a {
     align-items: flex-start;
   }
 }
+
+/* main pages */
+:root {
+  --red: #b3261a;
+  --dark-red: #980408;
+  --black: #050000;
+  --card: #0e0808;
+  --light-gray: #d6d3d4;
+  --gray: #9f9b9b;
+  --white: #ffffff;
+  --sidebar-w: 250px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--white);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+}
+.darkmode body {
+   background: var(--black);
+  color: var(--white);
+}
+
+h1,
+h2,
+.brand {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* =========================
+   Page
+   ========================= */
+
+.page-wrap {
+  margin-left: var(--sidebar-w);
+  padding: 56px 0 80px;
+}
+
+.page-head-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0 40px;
+  margin-bottom: 30px;
+}
+
+.page-title {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+}
+
+.page-subtitle {
+  margin: 0;
+  color: var(--black);
+}
+.darkmode .page-subtitle {
+  color: var(--light-gray);
+}
+
+.page-link {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 9px 18px;
+  border-radius: 999px;
+  color: var(--black);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+.darkmode .page-link{
+  color: var(--gray);
+} 
+
+.page-link:hover {
+  border-color: var(--red);
+  color: var(--dark-red);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Genre filters
+   ========================= */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0 40px;
+  margin-bottom: 34px;
+}
+
+.pill {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 9px 18px;
+  border-radius: 999px;
+  color: var(--black);
+  background: transparent;
+  font-size: 0.83rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+.darkmode .pill {
+   color: var(--white);
+}
+
+.pill:hover,
+.pill.active {
+  border-color: var(--red);
+  color: var(--dark-red);
+  transform: translateY(-2px);
+}
+
+.pill.active {
+  background: linear-gradient(120deg, var(--red), var(--dark-red));
+  color: var(--white);
+}
