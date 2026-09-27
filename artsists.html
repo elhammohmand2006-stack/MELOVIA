@@ -101,5 +101,63 @@
         <div class="row g-4" id="artistGrid"></div>
       </section>
     </main>
+
+    <!-- Artist modal: opens on card click, holds the song list -->
+    <div
+      class="modal fade"
+      id="artistModal"
+      tabindex="-1"
+      aria-labelledby="dName"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-lg artist-modal-dialog"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="d-head">
+              <div class="d-photo">
+                <img id="dImage" src="" alt="" />
+              </div>
+
+              <div class="artist-heading">
+                <div class="d-name" id="dName">—</div>
+                <span class="badge genre-badge" id="dGenre">—</span>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <h2 class="songs-title">Album</h2>
+            <a href="albums.html" class="album-link-card">
+              <div class="album-link-cover">
+                <img id="dAlbumImage" src="" alt="" />
+              </div>
+              <div class="album-link-info">
+                <div class="album-link-title" id="dAlbumTitle">—</div>
+                <div class="album-link-year" id="dAlbumYear">—</div>
+              </div>
+              <span class="album-link-arrow">→</span>
+            </a>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-outline-light" id="prevArtistBtn">
+              ◀ Previous
+            </button>
+            <button class="btn btn-outline-light" id="nextArtistBtn">
+              Next ▶
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
