@@ -772,4 +772,31 @@
 }
 
 
+@media (max-width:880px) {
+      .grid4 {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .mpanel {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      section {
+        padding: 40px 24px
+      }
+    }
+
+    @media (max-width:640px) {
+
+      .grid4,
+      .mpanel {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .page-head h1 {
+        font-size: 1.9rem
+      }
+    }
+
+
    
