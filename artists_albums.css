@@ -1078,3 +1078,111 @@ button {
 .d-nav .btn {
   flex: 1;
 }
+
+/* =====================================================
+   SONG CARDS
+===================================================== */
+
+#songList {
+  width: 100%;
+}
+
+.song-audio-row {
+  width: 100%;
+  min-height: 60px;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.song-audio-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+}
+
+.song-num {
+  color: var(--red);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.song-name {
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.song-audio-row audio {
+  width: 280px;
+  height: 38px;
+}
+
+/* =====================================================
+   CARD IMAGE ZOOM ANIMATION
+===================================================== */
+
+.artist-cover img,
+.album-cover img {
+    animation: imageZoom 5s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   ZOOM ANIMATION
+===================================================== */
+
+@keyframes imageZoom {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 900px) {
+  .page-wrap {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-wrap {
+    padding-top: 35px;
+  }
+
+  .page-head-row,
+  .filters,
+  .artists-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .artist-modal-dialog .modal-header,
+  .artist-modal-dialog .modal-body,
+  .artist-modal-dialog .modal-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
