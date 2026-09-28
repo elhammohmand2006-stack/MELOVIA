@@ -586,7 +586,7 @@ footer.melovia-footer a {
     row-gap: 36px;
   }
 }
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   /* matches the sidebar's own collapse breakpoint — it goes off-canvas here, so drop the offset */
   footer.melovia-footer {
     margin-left: 0;
