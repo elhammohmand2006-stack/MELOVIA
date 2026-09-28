@@ -653,7 +653,7 @@ main {
 }
 
 /* =====================================================
-   THEME BUTTON
+   THEME BUTTON
 ===================================================== */
 
 .theme-btn {
@@ -1287,3 +1287,26 @@ main {
     border: 1px solid var(--red);
 }
 
+
+/* =========================
+   ✅ جدید: POPULAR ARTISTS
+   عکس همه‌ی هنرمندها هم‌اندازه
+========================= */
+
+.artist-img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.col-lg-2 h3 {
+    font-size: 1.3rem;
+}
+
+.RB{
+    height: 60px;
+}
+
+.elec{
+    height: 50px; 
+}
