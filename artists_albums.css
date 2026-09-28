@@ -485,7 +485,7 @@ a {
        MOBILE
     ========================= */
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   /* Hamburger */
 
   .nav-label {
